@@ -1,5 +1,5 @@
 import { Section } from "@/components/section";
-import { Project, ProjectProps } from "@/feature/projects/project";
+import { Project, ProjectProps } from "@/feature/projects/components/project";
 
 export function ProjectsSection() {
   const projects: Array<ProjectProps> = [];

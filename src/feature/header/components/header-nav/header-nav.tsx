@@ -35,7 +35,7 @@ export function HeaderNav() {
         <Button variant="text" onClick={() => scrollToSection("contact")}>
           Contact
         </Button>
-        <Button variant="secondary" onClick={downloadResume}>
+        <Button variant="secondary" onClick={downloadResume} className="px-4! py-2!">
           Resume
         </Button>
       </nav>

@@ -1,34 +1,49 @@
-import Image from "next/image";
+"use client";
 
-import { Heading } from "@/components/heading";
+import { ArrowDown } from "lucide-react";
+
+import { Badge } from "@/components/badge/badge";
+import { Button } from "@/components/button";
 import { Section } from "@/components/section";
 
 export function HeroSection() {
-  const technologies: Array<{ tech: string; icons: Array<{ src: string; alt: string }> }> = [
-    { tech: "Frontend", icons: [{ src: "/icons/react.svg", alt: "React" }] },
-    { tech: "Backend", icons: [{ src: "/icons/nodejs.svg", alt: "Node.js" }] },
-    { tech: "Styling", icons: [{ src: "/icons/tailwindcss.svg", alt: "Tailwind CSS" }] },
-  ];
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Section id="hero">
-      <div>
-        <p>Hello! I&apos;m Andreas Hofmann</p>
-        <p>A software developer specializing in web development.</p>
-        <p>I excel at creating modern, responsive, and user-friendly web applications.</p>
-      </div>
-
-      <div>
-        {technologies.map(({ tech, icons }) => (
-          <div key={tech}>
-            <Heading type="h4">{tech}</Heading>
-            <div className="flex flex-row">
-              {/* TODO: create icon component */}
-              {icons.map(({ src, alt }) => (
-                <Image key={alt} src={src} alt={alt} width={40} height={40} />
-              ))}
-            </div>
+      <div className="relative flex min-h-[90vh] items-center justify-center">
+        <div className="max-w-7xl px-6 text-center">
+          <div className="mb-6">
+            <Badge>Welcome to my portfolio</Badge>
           </div>
-        ))}
+          <h1 className="mb-6 text-5xl md:text-7xl">
+            Hi, I&apos;m <span className="text-primary">Andreas Hofmann</span>
+          </h1>
+          <p className="mb-8 max-w-3xl text-xl text-muted-foreground md:text-2xl">
+            A passionate software developer specializing in building exceptional digital experiences
+            with Next.js and TypeScript
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button onClick={() => scrollToSection("contact")}>Get in Touch</Button>
+            <Button variant="secondary" onClick={() => scrollToSection("experience")}>
+              View Experience
+            </Button>
+          </div>
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <Button
+              variant="text"
+              onClick={() => scrollToSection("about")}
+              className="animate-bounce text-muted-foreground"
+            >
+              <ArrowDown className="h-8 w-8" />
+            </Button>
+          </div>
+        </div>
       </div>
     </Section>
   );
