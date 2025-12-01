@@ -9,13 +9,19 @@ interface SectionProps {
   title?: string;
   align?: "left" | "center" | "right";
   adornment?: ReactNode;
+  hasMargin?: boolean;
 }
 
 export function Section(props: SectionProps) {
-  const { children, id, title, align = "left", adornment } = props;
+  const { children, id, title, align = "left", adornment, hasMargin = true } = props;
 
   return (
-    <section id={id}>
+    <section
+      id={id}
+      className={clsx("mx-auto flex max-w-7xl flex-col px-6", {
+        "py-20": hasMargin,
+      })}
+    >
       {(title || adornment) && (
         <div
           className={clsx({
@@ -24,7 +30,11 @@ export function Section(props: SectionProps) {
             "flex justify-between": adornment,
           })}
         >
-          {title && <Heading type="h2">{title}</Heading>}
+          {title && (
+            <Heading type="h2" marginBottom="xl">
+              {title}
+            </Heading>
+          )}
           {adornment && adornment}
         </div>
       )}

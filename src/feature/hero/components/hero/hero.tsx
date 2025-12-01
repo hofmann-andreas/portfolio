@@ -4,12 +4,11 @@ import { ArrowDown } from "lucide-react";
 
 import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
-import { Section } from "@/components/section";
 import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeroSection() {
   return (
-    <Section id="hero">
+    <section id="hero">
       <div className="relative flex min-h-[90vh] items-center justify-center">
         <div className="max-w-7xl px-6 text-center">
           <div className="mb-6">
@@ -39,6 +38,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
