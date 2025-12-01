@@ -9,7 +9,7 @@ import { scrollToSection } from "@/utils/scroll-to-section";
 export function HeroSection() {
   return (
     <section id="hero">
-      <div className="relative flex min-h-[90vh] items-center justify-center">
+      <div className="relative flex min-h-[calc(100vh-77px)] items-center justify-center">
         <div className="max-w-7xl px-6 text-center">
           <div className="mb-6">
             <Badge>Welcome to my portfolio</Badge>
