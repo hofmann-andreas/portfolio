@@ -84,3 +84,9 @@ html {
   font-weight: medium;
   line-height: 1.5;
 }
+
+@layer base {
+  main > section:nth-child(even) {
+    @apply bg-card/50;
+  }
+}
