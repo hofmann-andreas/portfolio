@@ -19,7 +19,7 @@ export function HeaderNav() {
 
   return (
     <>
-      <nav className="hidden items-center gap-6 md:flex">
+      <nav className="hidden items-center gap-8 md:flex">
         <Button variant="text" onClick={() => scrollToSection("about")}>
           About
         </Button>

@@ -16,16 +16,18 @@ export function Section(props: SectionProps) {
 
   return (
     <section id={id}>
-      <div
-        className={clsx({
-          "flex justify-center": align === "center",
-          "flex justify-end": align === "right",
-          "flex justify-between": adornment,
-        })}
-      >
-        <Heading type="h2">{title}</Heading>
-        {adornment && adornment}
-      </div>
+      {(title || adornment) && (
+        <div
+          className={clsx({
+            "flex justify-center": align === "center",
+            "flex justify-end": align === "right",
+            "flex justify-between": adornment,
+          })}
+        >
+          {title && <Heading type="h2">{title}</Heading>}
+          {adornment && adornment}
+        </div>
+      )}
 
       {children}
     </section>
