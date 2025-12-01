@@ -2,8 +2,8 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import { Footer } from "@/feature/layout/footer";
-import { Header } from "@/feature/layout/header";
+import { Footer } from "@/feature/footer";
+import { Header } from "@/feature/header/components/header";
 
 export const metadata: Metadata = {
   title: "Software Developer",
