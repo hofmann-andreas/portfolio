@@ -1,15 +1,9 @@
 "use client";
 
 import { Button } from "@/components/button";
+import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeaderNav() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = "/pdf/resume-hofmann-andreas.pdf";

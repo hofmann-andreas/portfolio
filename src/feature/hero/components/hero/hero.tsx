@@ -5,15 +5,9 @@ import { ArrowDown } from "lucide-react";
 import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
 import { Section } from "@/components/section";
+import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeroSection() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <Section id="hero">
       <div className="relative flex min-h-[90vh] items-center justify-center">
