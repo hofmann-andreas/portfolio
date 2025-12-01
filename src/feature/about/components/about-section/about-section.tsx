@@ -45,9 +45,11 @@ export function AboutSection() {
           <div className="space-y-4">
             {points.map((point) => (
               <div className="flex items-start gap-4" key={point.title}>
-                <div className="mt-2 min-h-2 min-w-2 rounded-full bg-primary"></div>
+                <div className="mt-2 min-h-2 min-w-2 rounded-full bg-primary" />
                 <div>
-                  <h4>{point.title}</h4>
+                  <Heading type="h4" marginBottom="sm">
+                    {point.title}
+                  </Heading>
                   <p className="text-muted-foreground">{point.description}</p>
                 </div>
               </div>

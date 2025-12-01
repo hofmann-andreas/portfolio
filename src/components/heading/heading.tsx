@@ -21,10 +21,10 @@ export function Heading(props: HeadingProps) {
   });
 
   const font = clsx({
-    "text-4xl font-bold": type === "h1",
-    "text-3xl font-semibold": type === "h2",
-    "text-2xl font-medium": type === "h3",
-    "text-xl font-normal": type === "h4",
+    "text-3xl font-bold": type === "h1",
+    "text-2xl font-semibold": type === "h2",
+    "text-xl font-medium": type === "h3",
+    "text-lg font-normal": type === "h4",
   });
 
   return <Component className={clsx(font, margin)}>{children}</Component>;
