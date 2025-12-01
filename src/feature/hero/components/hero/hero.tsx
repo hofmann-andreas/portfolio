@@ -10,7 +10,7 @@ export function HeroSection() {
     { tech: "Styling", icons: [{ src: "/icons/tailwindcss.svg", alt: "Tailwind CSS" }] },
   ];
   return (
-    <Section id="introduction">
+    <Section id="hero">
       <div>
         <p>Hello! I&apos;m Andreas Hofmann</p>
         <p>A software developer specializing in web development.</p>
