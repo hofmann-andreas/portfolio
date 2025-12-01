@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
-export function IntroductionSection() {
+export function HeroSection() {
   const technologies: Array<{ tech: string; icons: Array<{ src: string; alt: string }> }> = [
     { tech: "Frontend", icons: [{ src: "/icons/react.svg", alt: "React" }] },
     { tech: "Backend", icons: [{ src: "/icons/nodejs.svg", alt: "Node.js" }] },
