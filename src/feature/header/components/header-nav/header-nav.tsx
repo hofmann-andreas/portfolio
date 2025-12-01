@@ -6,7 +6,7 @@ import { scrollToSection } from "@/utils/scroll-to-section";
 export function HeaderNav() {
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/pdf/resume-hofmann-andreas.pdf";
+    link.href = "/next-assets/pdf/resume-hofmann-andreas.pdf";
     link.download = "resume-hofmann-andreas.pdf";
     link.click();
   };
