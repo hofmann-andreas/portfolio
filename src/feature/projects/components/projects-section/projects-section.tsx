@@ -2,6 +2,7 @@ import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
 import { Heading } from "@/components/heading";
+import { Link } from "@/components/link/link";
 import { Section } from "@/components/section";
 
 import { projects } from "../../data/projects";
@@ -43,24 +44,18 @@ export function ProjectsSection() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
-                  >
+                  <Link href={project.github} shouldOpenInNewWindow>
                     <Github className="h-5 w-5" />
                     Code
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    shouldOpenInNewWindow
                     className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
                   >
                     <ExternalLink className="h-5 w-5" />
                     Demo
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

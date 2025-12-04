@@ -1,8 +1,47 @@
+import { Github, Linkedin, Mail } from "lucide-react";
+
+import { Heading } from "@/components/heading";
+import { Link } from "@/components/link/link";
+
 export function Footer() {
   return (
-    <footer>
-      <hr className="w-full" />
-      <p>© 2025 Andreas Hofmann. Built with Next.js & Tailwind CSS. All rights reserved.</p>
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <div className="text-center md:text-left">
+            <Heading type="h3" marginBottom="xs">
+              Andreas Hofmann
+            </Heading>
+            <p className="mt-1 text-muted-foreground">
+              Software Developer specializing in Next.js and TypeScript
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="https://github.com/hofmann-andreas"
+              shouldOpenInNewWindow
+              aria-label="GitHub"
+            >
+              <Github className="h-6 w-6" />
+            </Link>
+            <Link
+              href="https://linkedin.com/in/hofmann-andreas"
+              shouldOpenInNewWindow
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-6 w-6" />
+            </Link>
+            <Link href="mailto:dev.andreas.hofmann@gmail.com" aria-label="Email">
+              <Mail className="h-6 w-6" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-border pt-8 text-center text-muted-foreground">
+          <p>© {new Date().getFullYear()} Andreas Hofmann. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   );
 }
