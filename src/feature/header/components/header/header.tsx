@@ -1,6 +1,16 @@
-import { HeaderNav } from "../header-nav";
+"use client";
+
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+import { Button } from "@/components/button";
+
+import { DesktopNav } from "../desktop-nav";
+import { MobileNav } from "../mobile-nav/mobile-nav";
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-4">
@@ -10,8 +20,20 @@ export function Header() {
             <span className="text-sm text-muted-foreground">Software Developer</span>
           </div>
 
-          <HeaderNav />
+          <DesktopNav />
+
+          <div className="text-foreground md:hidden">
+            <Button
+              variant="text"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
+
+        {isMenuOpen && <MobileNav />}
       </div>
     </header>
   );
