@@ -21,18 +21,18 @@ export function AboutSection() {
   return (
     <Section id="about" title="About Me">
       <div className="grid items-center gap-12 md:grid-cols-2">
-        <div>
-          <p className="mb-4 text-muted-foreground">
+        <div className="flex flex-col gap-4 text-muted-foreground">
+          <p>
             Hi, I&apos;m Andreas Hofmann, a passionate software developer specializing in modern web
             development with Next.js and TypeScript. I love building elegant, performant, and
             user-friendly applications.
           </p>
-          <p className="mb-4 text-muted-foreground">
+          <p>
             With years of experience in the industry, I&apos;ve worked on diverse projects ranging
             from e-commerce platforms to complex web applications. I&apos;m always eager to learn
             new technologies and best practices to deliver exceptional solutions.
           </p>
-          <p className="text-muted-foreground">
+          <p>
             When I&apos;m not coding, you can find me exploring the latest web technologies,
             contributing to open-source projects, or sharing my knowledge with the developer
             community.
@@ -47,7 +47,7 @@ export function AboutSection() {
               <div className="flex items-start gap-4" key={point.title}>
                 <div className="mt-2 min-h-2 min-w-2 rounded-full bg-primary" />
                 <div>
-                  <Heading type="h4" marginBottom="sm">
+                  <Heading type="h4" marginBottom="xs">
                     {point.title}
                   </Heading>
                   <p className="text-muted-foreground">{point.description}</p>
