@@ -1,6 +1,7 @@
 import { Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
+import { Icon } from "@/components/icon";
 import { Section } from "@/components/section";
 
 import { ContactForm } from "../contact-form";
@@ -15,13 +16,13 @@ interface ContactMethod {
 export function ContactSection() {
   const contactMethod: Array<ContactMethod> = [
     {
-      icon: <Mail className="h-6 w-6 text-primary" />,
+      icon: <Icon icon={Mail} size={24} className="text-primary" />,
       label: "Email",
       text: "dev.andreas.hofmann@gmail.com",
       href: "mailto:dev.andreas.hofmann@gmail.com",
     },
     {
-      icon: <MapPin className="h-6 w-6 text-primary" />,
+      icon: <Icon icon={MapPin} size={24} className="text-primary" />,
       label: "Location",
       text: "Bern, Switzerland",
     },

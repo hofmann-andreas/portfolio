@@ -1,6 +1,7 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { Heading } from "@/components/heading";
+import { Icon } from "@/components/icon";
 import { Link } from "@/components/link/link";
 
 export function Footer() {
@@ -23,17 +24,17 @@ export function Footer() {
               shouldOpenInNewWindow
               aria-label="GitHub"
             >
-              <Github className="h-6 w-6" />
+              <Icon icon="github" size={24} />
             </Link>
             <Link
               href="https://linkedin.com/in/hofmann-andreas"
               shouldOpenInNewWindow
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-6 w-6" />
+              <Icon icon="linkedin" size={24} />
             </Link>
             <Link href="mailto:dev.andreas.hofmann@gmail.com" aria-label="Email">
-              <Mail className="h-6 w-6" />
+              <Icon icon={Mail} size={24} />
             </Link>
           </div>
         </div>

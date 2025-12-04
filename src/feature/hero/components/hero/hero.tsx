@@ -4,6 +4,7 @@ import { ArrowDown } from "lucide-react";
 
 import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
+import { Icon } from "@/components/icon";
 import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeroSection() {
@@ -33,7 +34,7 @@ export function HeroSection() {
               onClick={() => scrollToSection("about")}
               className="animate-bounce text-muted-foreground"
             >
-              <ArrowDown className="h-8 w-8" />
+              <Icon icon={ArrowDown} size={32} />
             </Button>
           </div>
         </div>

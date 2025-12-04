@@ -1,7 +1,8 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 import { Heading } from "@/components/heading";
+import { Icon } from "@/components/icon";
 import { Link } from "@/components/link/link";
 import { Section } from "@/components/section";
 
@@ -45,7 +46,7 @@ export function ProjectsSection() {
                 </div>
                 <div className="flex gap-4">
                   <Link href={project.github} shouldOpenInNewWindow>
-                    <Github className="h-5 w-5" />
+                    <Icon icon="github" size={20} />
                     Code
                   </Link>
                   <Link
@@ -53,7 +54,7 @@ export function ProjectsSection() {
                     shouldOpenInNewWindow
                     className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
                   >
-                    <ExternalLink className="h-5 w-5" />
+                    <Icon icon={ExternalLink} size={20} />
                     Demo
                   </Link>
                 </div>
