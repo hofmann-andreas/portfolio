@@ -11,6 +11,10 @@ import { MobileNav } from "../mobile-nav/mobile-nav";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-4">
@@ -33,7 +37,7 @@ export function Header() {
           </div>
         </div>
 
-        {isMenuOpen && <MobileNav />}
+        {isMenuOpen && <MobileNav closeMenu={closeMenu} />}
       </div>
     </header>
   );

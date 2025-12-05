@@ -5,22 +5,30 @@ import { scrollToSection } from "@/utils/scroll-to-section";
 
 import { downloadFile } from "../../util/download-file";
 
-export const MobileNav = () => {
+interface MobileNavProps {
+  closeMenu: () => void;
+}
+
+export const MobileNav = ({ closeMenu }: MobileNavProps) => {
+  const handleClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    closeMenu();
+  };
   return (
     <nav className="mt-4 flex flex-col items-end gap-4 border-t border-border pt-4 pb-4 md:hidden">
-      <Button onClick={() => scrollToSection("about")} variant="text">
+      <Button onClick={() => handleClick("about")} variant="text">
         About
       </Button>
-      <Button onClick={() => scrollToSection("experience")} variant="text">
+      <Button onClick={() => handleClick("experience")} variant="text">
         Experience
       </Button>
-      <Button onClick={() => scrollToSection("stack")} variant="text">
+      <Button onClick={() => handleClick("stack")} variant="text">
         Stack
       </Button>
-      <Button onClick={() => scrollToSection("projects")} variant="text">
+      <Button onClick={() => handleClick("projects")} variant="text">
         Projects
       </Button>
-      <Button onClick={() => scrollToSection("contact")} variant="text">
+      <Button onClick={() => handleClick("contact")} variant="text">
         Contact
       </Button>
       <Button
