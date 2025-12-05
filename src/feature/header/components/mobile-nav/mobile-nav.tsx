@@ -13,8 +13,11 @@ export const MobileNav = (props: MobileNavProps) => {
   const { onNavigate } = props;
 
   const handleClick = (sectionId: string) => {
-    scrollToSection(sectionId);
     onNavigate();
+
+    requestAnimationFrame(() => {
+      scrollToSection(sectionId);
+    });
   };
 
   return (
