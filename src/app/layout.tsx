@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Andreas Hofmann" }],
   icons: {
-    icon: "/icon.png",
+    icon: "/icon0.png",
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
   },
