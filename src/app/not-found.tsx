@@ -2,8 +2,13 @@ import { ButtonLink } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link/link";
 import { Home } from "lucide-react";
+import { redirect } from "next/navigation";
 
 export default function NotFound() {
+  if (process.env.NEXT_PUBLIC_MAINTENANCE === "true") {
+    redirect("/maintenance");
+  }
+
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
       <div className="relative z-10 w-full max-w-2xl text-center">
