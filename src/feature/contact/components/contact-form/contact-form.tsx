@@ -35,7 +35,11 @@ export function ContactForm() {
     <div className="rounded-lg border border-border bg-card p-6">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {isSuccess && (
-          <div className="flex items-start gap-3 rounded-lg border border-green-500/20 bg-green-500/10 p-4">
+          <div
+            className="flex items-start gap-3 rounded-lg border border-green-500/20 bg-green-500/10 p-4"
+            role="status"
+            aria-live="polite"
+          >
             <CheckCircle className="h-5 w-5 shrink-0 text-green-500" />
             <div>
               <p className="text-green-500">Message sent successfully!</p>
@@ -47,7 +51,10 @@ export function ContactForm() {
         )}
 
         {hasError && (
-          <div className="flex items-center gap-3 rounded-lg border border-destructive/20 bg-destructive/10 p-4">
+          <div
+            className="flex items-center gap-3 rounded-lg border border-destructive/20 bg-destructive/10 p-4"
+            role="alert"
+          >
             <AlertCircle className="h-5 w-5 shrink-0 text-destructive" />
             <p className="text-sm text-destructive">
               Something went wrong. Please try again or contact me via email directly.

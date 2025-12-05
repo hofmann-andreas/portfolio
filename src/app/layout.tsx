@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hofmannandreas.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Andreas Hofmann – Software Developer",
     template: "%s | Andreas Hofmann",
@@ -28,8 +31,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Andreas Hofmann" }],
 };
 
-const personJsonLd = {
+const websiteJsonLd = {
   "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Andreas Hofmann – Portfolio",
+  url: "https://hofmannandreas.com",
+};
+
+const personJsonLd = {
   "@type": "Person",
   name: "Andreas Hofmann",
   url: "https://hofmannandreas.com",
@@ -38,14 +47,7 @@ const personJsonLd = {
     "@type": "Organization",
     name: "Interdiscount",
   },
-  sameAs: ["https://github.com/hofmann-andreas", "https://www.linkedin.com/in/hofmann-andreas."],
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Andreas Hofmann – Portfolio",
-  url: "https://hofmannandreas.com",
+  sameAs: ["https://github.com/hofmann-andreas", "https://www.linkedin.com/in/hofmann-andreas"],
 };
 
 export default function RootLayout({
