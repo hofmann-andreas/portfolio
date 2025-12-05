@@ -1,7 +1,7 @@
 import { Wrench, Mail, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 
-export function Maintenance() {
+export default function Maintenance() {
   if (process.env.NEXT_PUBLIC_MAINTENANCE !== "true") {
     redirect("/");
   }
