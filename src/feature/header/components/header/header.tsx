@@ -23,6 +23,17 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handler = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
   return (
     <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-4">

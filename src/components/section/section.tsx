@@ -18,7 +18,7 @@ export function Section(props: SectionProps) {
   return (
     <section id={id}>
       <div
-        className={clsx("mx-auto flex max-w-7xl flex-col px-6", {
+        className={clsx("mx-auto flex max-w-7xl scroll-mt-24 flex-col px-6", {
           "py-20": hasMargin,
         })}
       >
