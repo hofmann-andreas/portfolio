@@ -2,7 +2,7 @@ import clsx from "clsx";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { HTMLAttributes, ReactNode } from "react";
 
-interface LinkProps extends HTMLAttributes<HTMLAnchorElement>, NextLinkProps {
+export interface LinkProps extends HTMLAttributes<HTMLAnchorElement>, NextLinkProps {
   children?: ReactNode;
   shouldOpenInNewWindow?: boolean;
 }

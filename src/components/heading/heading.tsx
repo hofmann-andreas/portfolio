@@ -5,10 +5,12 @@ interface HeadingProps {
   type: "h1" | "h2" | "h3" | "h4";
   children: ReactNode;
   marginBottom?: "xs" | "sm" | "md" | "lg" | "xl";
+  // Only use for special cases like 404 page
+  className?: string;
 }
 
 export function Heading(props: HeadingProps) {
-  const { children, type, marginBottom } = props;
+  const { children, type, marginBottom, className } = props;
 
   const Component = type;
 
@@ -27,5 +29,5 @@ export function Heading(props: HeadingProps) {
     "text-lg font-normal": type === "h4",
   });
 
-  return <Component className={clsx(font, margin)}>{children}</Component>;
+  return <Component className={clsx(font, margin, className)}>{children}</Component>;
 }

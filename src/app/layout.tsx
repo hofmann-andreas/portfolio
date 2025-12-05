@@ -2,9 +2,6 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import { Footer } from "@/feature/footer/components/footer";
-import { Header } from "@/feature/header/components/header";
-
 export const metadata: Metadata = {
   title: "Software Developer",
   description: "My portfolio created with Next.js, TypeScript and Tailwind CSS.",
@@ -20,11 +17,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="bg-app text-foreground">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body className="bg-app text-foreground">{children}</body>
     </html>
   );
 }

@@ -3,6 +3,18 @@ import clsx from "clsx";
 export const buttonVariants = ["primary", "secondary", "text"] as const;
 export type ButtonVariant = (typeof buttonVariants)[number];
 
+interface ButtonClassnamesProps {
+  isFullWidth?: boolean;
+  isFullWidthFromSM?: boolean;
+}
+
+export function getButtonBaseClassnames({ isFullWidth, isFullWidthFromSM }: ButtonClassnamesProps) {
+  return clsx("items-center justify-center", {
+    "w-full": isFullWidth,
+    "sm:w-full": isFullWidthFromSM,
+  });
+}
+
 export function getButtonVariantClasses(variant: ButtonVariant) {
   const buttonVariants: Record<ButtonVariant, string> = {
     primary: clsx(
