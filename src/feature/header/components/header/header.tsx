@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/button";
 
@@ -11,9 +11,17 @@ import { MobileNav } from "../mobile-nav/mobile-nav";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
@@ -37,7 +45,7 @@ export function Header() {
           </div>
         </div>
 
-        {isMenuOpen && <MobileNav closeMenu={closeMenu} />}
+        {isMenuOpen && <MobileNav onNavigate={() => setIsMenuOpen(false)} />}
       </div>
     </header>
   );
