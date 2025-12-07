@@ -16,7 +16,7 @@ export function ProjectCardV1(props: ProjectCardV1Props) {
   const { project } = props;
 
   return (
-    <Card image={{ src: project.imageSrc, alt: project.title }}>
+    <Card>
       <div className="mb-4 flex items-start justify-between">
         <Heading type="h3" marginBottom="sm">
           {project.title}
