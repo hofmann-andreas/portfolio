@@ -34,7 +34,7 @@ export function Footer() {
             >
               <Icon icon="linkedin" size={24} />
             </Link>
-            <Link href="mailto:dev.andreas.hofmann@gmail.com" aria-label="Send email">
+            <Link href="mailto:contact@hofmannandreas.com" aria-label="Send email">
               <Icon icon={Mail} size={24} />
             </Link>
           </div>

@@ -44,10 +44,10 @@ export default function Maintenance() {
             </div>
             <p className="mb-2">Need to Reach Me?</p>
             <a
-              href="mailto:dev.andreas.hofmann@gmail.com"
+              href="mailto:contact@hofmannandreas.com"
               className="text-sm text-primary hover:underline"
             >
-              dev.andreas.hofmann@gmail.com
+              contact@hofmannandreas.com
             </a>
           </div>
         </div>
