@@ -1,4 +1,5 @@
 import { JsonLd } from "@/components/json-ld/json-ld";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 import type { Metadata } from "next";
@@ -62,7 +63,10 @@ export default function RootLayout({
         <JsonLd id="person-jsonld" data={personJsonLd} />
         <JsonLd id="website-jsonld" data={websiteJsonLd} />
       </head>
-      <body className="bg-app text-foreground">{children}</body>
+      <body className="bg-app text-foreground">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
