@@ -50,6 +50,7 @@ export function ContactForm() {
           <div
             className="flex items-center gap-3 rounded-lg border border-destructive/20 bg-destructive/10 p-4"
             role="alert"
+            aria-live="polite"
           >
             <AlertCircle className="h-5 w-5 shrink-0 text-destructive" />
             <p className="text-sm text-destructive">

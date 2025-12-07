@@ -7,7 +7,9 @@ export function ProjectListV1() {
       {projects.map((project) => (
         <ProjectCardV1 key={project.title} project={project} />
       ))}
-      <p className="mt-8 text-center text-muted-foreground">More projects coming soon...</p>
+      <p className="mt-8 text-center text-muted-foreground">
+        This portfolio will be continuously expanded with production-oriented side projects.
+      </p>
     </div>
   );
 }

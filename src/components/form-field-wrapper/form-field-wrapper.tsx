@@ -18,7 +18,11 @@ export function FormFieldWrapper(props: FormFieldWrapperProps) {
         {children}
 
         {error && (
-          <p className="flex items-center gap-1 text-sm text-destructive">
+          <p
+            className="flex items-center gap-1 text-sm text-destructive"
+            role="alert"
+            aria-live="polite"
+          >
             <AlertCircle className="h-4 w-4" />
             {error}
           </p>

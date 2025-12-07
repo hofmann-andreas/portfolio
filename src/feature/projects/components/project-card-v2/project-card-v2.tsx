@@ -42,7 +42,11 @@ export const ProjectCardV2 = (props: ProjectCardV2Props) => {
           ))}
         </div>
         <div className="flex gap-4">
-          <Link href={project.github} shouldOpenInNewWindow>
+          <Link
+            href={project.github}
+            shouldOpenInNewWindow
+            aria-label={`View code of ${project.title} on GitHub`}
+          >
             <Icon icon="github" size={20} />
             Code
           </Link>
@@ -50,6 +54,7 @@ export const ProjectCardV2 = (props: ProjectCardV2Props) => {
             href={project.demo}
             shouldOpenInNewWindow
             className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+            aria-label={`View demo of ${project.title}`}
           >
             <Icon icon={ExternalLink} size={20} />
             Demo

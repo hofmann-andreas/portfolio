@@ -8,7 +8,7 @@ interface ContactMethodProps {
 
 export function ContactMethod(props: ContactMethodProps) {
   const { method } = props;
-  const { icon, label, text, href } = method;
+  const { icon, label, text, href, ariaLabel } = method;
 
   return (
     <div className="flex items-start gap-2">
@@ -22,6 +22,7 @@ export function ContactMethod(props: ContactMethodProps) {
             <Link
               href={href}
               className="text-muted-foreground transition-colors hover:text-primary"
+              aria-label={ariaLabel}
             >
               {text}
             </Link>

@@ -5,4 +5,5 @@ export interface ContactData {
   label: string;
   text: string;
   href?: string;
+  ariaLabel?: string;
 }

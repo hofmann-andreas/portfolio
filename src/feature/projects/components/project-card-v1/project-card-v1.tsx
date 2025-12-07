@@ -25,7 +25,7 @@ export function ProjectCardV1(props: ProjectCardV1Props) {
           <Link
             href={project.github}
             shouldOpenInNewWindow
-            aria-label={`View ${project.title} on GitHub`}
+            aria-label={`View code of ${project.title} on GitHub`}
           >
             <Icon icon="github" size={20} />
           </Link>

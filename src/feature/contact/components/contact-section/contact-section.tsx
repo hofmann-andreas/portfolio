@@ -12,6 +12,7 @@ export function ContactSection() {
     {
       icon: <Icon icon={Mail} size={24} className="text-primary" />,
       label: "Email",
+      ariaLabel: "Send email",
       text: "dev.andreas.hofmann@gmail.com",
       href: "mailto:dev.andreas.hofmann@gmail.com",
     },

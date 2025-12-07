@@ -23,18 +23,18 @@ export function Footer() {
             <Link
               href="https://github.com/hofmann-andreas"
               shouldOpenInNewWindow
-              aria-label="GitHub"
+              aria-label="View profile on GitHub"
             >
               <Icon icon="github" size={24} />
             </Link>
             <Link
               href="https://linkedin.com/in/hofmann-andreas"
               shouldOpenInNewWindow
-              aria-label="LinkedIn"
+              aria-label="View profile on LinkedIn"
             >
               <Icon icon="linkedin" size={24} />
             </Link>
-            <Link href="mailto:dev.andreas.hofmann@gmail.com" aria-label="Email">
+            <Link href="mailto:dev.andreas.hofmann@gmail.com" aria-label="Send email">
               <Icon icon={Mail} size={24} />
             </Link>
           </div>

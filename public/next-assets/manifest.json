@@ -1,6 +1,10 @@
 {
   "name": "Andreas Hofmann – Software Developer",
-  "short_name": "Andreas Hofmann",
+  "short_name": "A. Hofmann",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#323232",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "/next-assets/icons/web-app-manifest-192x192.png",
@@ -14,8 +18,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#323232",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
