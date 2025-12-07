@@ -24,20 +24,12 @@ export function TechStackSection() {
     {
       category: "Backend",
       icon: <Database size={20} className="text-primary" />,
-      technologies: [
-        "Node.js",
-        "Express.js",
-        "Hybris",
-        "Spring Boot",
-        "Java",
-        "Sequelize",
-        "MySQL",
-      ],
+      technologies: ["Node.js", "Express.js", "Sequelize", "Java", "MySQL"],
     },
     {
       category: "Tooling & Workflows",
       icon: <Wrench size={20} className="text-primary" />,
-      technologies: ["Git", "ArgoCD", "Playwright", "Firebase", "Jest", "REST", "Vercel"],
+      technologies: ["Git", "ArgoCD", "Firebase", "Vercel", "Playwright", "Jest"],
     },
   ];
 
