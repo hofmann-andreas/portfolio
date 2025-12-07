@@ -29,11 +29,6 @@ export const metadata: Metadata = {
       "Portfolio of Andreas Hofmann, a software developer focused on Next.js, React and TypeScript.",
   },
   authors: [{ name: "Andreas Hofmann" }],
-  icons: {
-    icon: "/icon1.png",
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
-  },
 };
 
 const websiteJsonLd = {
