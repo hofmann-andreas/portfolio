@@ -4,11 +4,8 @@ export const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   if (!section) return;
 
-  const header = document.getElementById("site-header");
-  const headerHeight = header?.getBoundingClientRect().height ?? 0;
-
   const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-  const offsetTop = sectionTop - headerHeight - 16; // small padding
+  const offsetTop = sectionTop - 16;
 
   window.scrollTo({
     top: offsetTop,

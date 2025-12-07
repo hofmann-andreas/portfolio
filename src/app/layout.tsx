@@ -64,7 +64,7 @@ export default function RootLayout({
         <JsonLd id="person-jsonld" data={personJsonLd} />
         <JsonLd id="website-jsonld" data={websiteJsonLd} />
       </head>
-      <body className="bg-app text-foreground">
+      <body>
         {children}
         <Analytics />
       </body>
