@@ -5,13 +5,13 @@ export type ButtonVariant = (typeof buttonVariants)[number];
 
 interface ButtonClassnamesProps {
   isFullWidth?: boolean;
-  isFullWidthFromSM?: boolean;
+  hasMinWidthFromMD?: boolean;
 }
 
-export function getButtonBaseClassnames({ isFullWidth, isFullWidthFromSM }: ButtonClassnamesProps) {
+export function getButtonBaseClassnames({ isFullWidth, hasMinWidthFromMD }: ButtonClassnamesProps) {
   return clsx("items-center justify-center", {
     "w-full": isFullWidth,
-    "sm:w-full": isFullWidthFromSM,
+    "md:w-min": hasMinWidthFromMD,
   });
 }
 

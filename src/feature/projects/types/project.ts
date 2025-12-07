@@ -1,4 +1,4 @@
-export interface Project {
+export interface ProjectData {
   title: string;
   description: string;
   imageSrc: string;

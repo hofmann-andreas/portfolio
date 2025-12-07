@@ -1,6 +1,6 @@
-import { TechStack } from "../types/tech-stack";
+import { TechStackData } from "../types";
 
-export const techStack: Array<TechStack> = [
+export const techStack: Array<TechStackData> = [
   {
     category: "Frontend",
     technologies: [

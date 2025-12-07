@@ -1,6 +1,6 @@
-import { Project } from "../types";
+import { ProjectData } from "../types";
 
-export const projects: Array<Project> = [
+export const projects: Array<ProjectData> = [
   {
     description:
       "A modern, responsive portfolio website built with Next.js and TypeScript. Features a clean dark theme design, smooth scrolling navigation, and a fully functional contact form. Showcases my skills, experience, and approach to web development.",

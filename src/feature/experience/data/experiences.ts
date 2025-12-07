@@ -1,6 +1,6 @@
-import { Experience } from "../types";
+import { ExperienceData } from "../types";
 
-export const experiences: Array<Experience> = [
+export const experiences: Array<ExperienceData> = [
   {
     role: "Software Developer",
     company: "Interdiscount",

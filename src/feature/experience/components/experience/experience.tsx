@@ -1,0 +1,59 @@
+import { Badge } from "@/components/badge/badge";
+import { Heading } from "@/components/heading";
+import { ExperienceData } from "../../types";
+import { Card } from "@/components/card";
+
+interface ExperienceProps {
+  experience: ExperienceData;
+}
+
+export function Experience(props: ExperienceProps) {
+  const { experience } = props;
+
+  return (
+    <div
+      key={`${experience.role + experience.company}`}
+      className="relative border-l-2 border-primary pl-8"
+    >
+      <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full bg-primary" />
+
+      <Card>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <Heading type="h3" marginBottom="xs">
+                {experience.role}
+              </Heading>
+
+              <p className="text-primary">{experience.company}</p>
+            </div>
+            <span className="text-muted-foreground">{experience.period}</span>
+          </div>
+          <p className="text-muted-foreground">{experience.description}</p>
+          <div>
+            <Heading type="h4" marginBottom="sm">
+              Focus Areas
+            </Heading>
+            <ul className="list-inside list-disc text-muted-foreground">
+              {experience.focusAreas.map((area, index) => (
+                <li key={index}>{area}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <Heading type="h4" marginBottom="sm">
+              Stack
+            </Heading>
+            <div className="flex flex-wrap gap-2">
+              {experience.stack.map((tech, index) => (
+                <Badge key={index} size="sm">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+}

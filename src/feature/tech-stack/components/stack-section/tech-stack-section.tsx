@@ -5,10 +5,11 @@ import { Section } from "@/components/section";
 
 import { techStack } from "../../data/tech-stack";
 
-export function StackSection() {
+export function TechStackSection() {
   return (
     <Section id="stack" title="Tech Stack">
       <div className="flex flex-col gap-8">
+        <p></p>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {techStack.map(({ category, technologies }) => {
             return (

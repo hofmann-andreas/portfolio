@@ -9,7 +9,7 @@ import { FormTextArea } from "@/components/form-text-area";
 import { emailValidation, messageValidation, nameValidation } from "@/utils/form-validation";
 
 import { ContactFormData } from "../../types";
-import { useContactSubmit } from "../../use-contact-submit/use-contact-submit";
+import { useContactSubmit } from "../../use-contact-submit";
 
 export function ContactForm() {
   const {

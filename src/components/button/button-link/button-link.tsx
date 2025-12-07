@@ -12,10 +12,10 @@ export function ButtonLink(props: ButtonLinkProps) {
     variant = "primary",
     className,
     isFullWidth,
-    isFullWidthFromSM,
+    hasMinWidthFromMD,
     ...rest
   } = props;
-  const baseClassnames = getButtonBaseClassnames({ isFullWidth, isFullWidthFromSM });
+  const baseClassnames = getButtonBaseClassnames({ isFullWidth, hasMinWidthFromMD });
   const variantClassnames = getButtonVariantClasses(variant);
 
   return (

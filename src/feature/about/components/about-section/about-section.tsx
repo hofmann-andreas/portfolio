@@ -1,23 +1,6 @@
-import { Card } from "@/components/card";
-import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
 export function AboutSection() {
-  const points = [
-    {
-      title: "Frontend Development",
-      description: "Building responsive and interactive user interfaces with React and Next.js",
-    },
-    {
-      title: "Full-Stack Development",
-      description: "Creating end-to-end solutions with modern backend technologies",
-    },
-    {
-      title: "Performance Optimization",
-      description: "Ensuring applications are fast, efficient, and scalable",
-    },
-  ];
-
   return (
     <Section id="about" title="About Me" align="center">
       <div className="mx-auto flex max-w-3xl flex-col gap-4 text-muted-foreground">

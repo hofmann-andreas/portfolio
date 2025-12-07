@@ -6,7 +6,7 @@ import { ButtonVariant, getButtonBaseClassnames, getButtonVariantClasses } from 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   isFullWidth?: boolean;
-  isFullWidthFromSM?: boolean;
+  hasMinWidthFromMD?: boolean;
 }
 
 export function Button(props: ButtonProps) {
@@ -15,10 +15,10 @@ export function Button(props: ButtonProps) {
     variant = "primary",
     className,
     isFullWidth,
-    isFullWidthFromSM,
+    hasMinWidthFromMD,
     ...rest
   } = props;
-  const baseClassnames = getButtonBaseClassnames({ isFullWidth, isFullWidthFromSM });
+  const baseClassnames = getButtonBaseClassnames({ isFullWidth, hasMinWidthFromMD });
   const variantClassnames = getButtonVariantClasses(variant);
 
   return (

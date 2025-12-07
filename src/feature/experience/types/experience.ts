@@ -1,4 +1,4 @@
-export interface Experience {
+export interface ExperienceData {
   role: string;
   company: string;
   period: string;

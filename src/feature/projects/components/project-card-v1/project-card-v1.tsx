@@ -6,10 +6,10 @@ import { Heading } from "@/components/heading";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link/link";
 
-import { Project } from "../../types";
+import { ProjectData } from "../../types";
 
 interface ProjectCardV1Props {
-  project: Project;
+  project: ProjectData;
 }
 
 export function ProjectCardV1(props: ProjectCardV1Props) {
