@@ -2,9 +2,10 @@ import { LucideIcon } from "lucide-react";
 import { ComponentProps } from "react";
 
 type LucideIconType = LucideIcon;
+export type IconName = "github" | "linkedin" | LucideIconType;
 
 interface IconProps extends ComponentProps<"svg"> {
-  icon: LucideIconType | "github" | "linkedin";
+  icon: IconName;
   size?: number;
 }
 

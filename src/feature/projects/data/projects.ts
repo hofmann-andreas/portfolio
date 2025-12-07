@@ -3,7 +3,7 @@ import { ProjectData } from "../types";
 export const projects: Array<ProjectData> = [
   {
     description:
-      "A modern, responsive portfolio website built with Next.js and TypeScript. Features a clean dark theme design, smooth scrolling navigation, and a fully functional contact form. Showcases my skills, experience, and approach to web development.",
+      "A responsive, single-page portfolio built with Next.js, TypeScript, React, and Tailwind CSS. Uses a dark themed layout with smooth section-based navigation and a contact form to present my experience, tech stack, and projects.",
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
     title: "Personal Portfolio",
     imageSrc: "/next-assets/images/portfolio.png",
