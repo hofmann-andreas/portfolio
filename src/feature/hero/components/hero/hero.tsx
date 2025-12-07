@@ -40,6 +40,7 @@ export function HeroSection() {
               variant="text"
               onClick={() => scrollToSection("about")}
               className="animate-bounce text-muted-foreground"
+              aria-label="Scroll to about section"
             >
               <Icon icon={ArrowDown} size={32} />
             </Button>

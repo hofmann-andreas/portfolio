@@ -4,13 +4,11 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-const description =
-  "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://hofmannandreas.com"),
   title: "Andreas Hofmann – Software Developer",
-  description: description,
+  description:
+    "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
   authors: [{ name: "Andreas Hofmann" }],
   manifest: "/next-assets/manifest.json",
   icons: {
@@ -19,7 +17,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Andreas Hofmann – Software Developer",
-    description: description,
+    description:
+      "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
     url: "/",
     siteName: "Andreas Hofmann Portfolio",
     locale: "en_CH",
@@ -29,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Andreas Hofmann – Software Developer",
-    description: description,
+    description:
+      "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
     images: ["/next-assets/icons/og.png"],
   },
 };
