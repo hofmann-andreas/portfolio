@@ -1,8 +1,9 @@
 import clsx from "clsx";
 
-import { getButtonBaseClassnames, getButtonVariantClasses } from "../utils";
 import { Link, LinkProps } from "@/components/link/link";
+
 import { ButtonProps } from "../button/button";
+import { getButtonBaseClassnames, getButtonVariantClasses } from "../utils";
 
 type ButtonLinkProps = ButtonProps & LinkProps;
 

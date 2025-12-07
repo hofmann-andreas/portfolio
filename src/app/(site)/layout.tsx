@@ -1,6 +1,7 @@
+import { redirect } from "next/navigation";
+
 import { Footer } from "@/feature/footer/components/footer";
 import { Header } from "@/feature/header/components/header";
-import { redirect } from "next/navigation";
 
 export default function SiteLayout({
   children,

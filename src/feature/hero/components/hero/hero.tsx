@@ -6,7 +6,6 @@ import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { scrollToSection } from "@/utils/scroll-to-section";
-import { Card } from "@/components/card";
 
 export function HeroSection() {
   return (
@@ -17,7 +16,7 @@ export function HeroSection() {
             <Badge>Welcome to my portfolio</Badge>
           </div>
           <h1 className="mb-6 text-5xl md:text-7xl">
-            Hi, I'm <span className="text-primary">Andreas Hofmann</span>
+            Hi, I&apos;m <span className="text-primary">Andreas Hofmann</span>
           </h1>
           <p className="mb-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
             I build scalable, high-quality web experiences with Next.js, TypeScript, and modern

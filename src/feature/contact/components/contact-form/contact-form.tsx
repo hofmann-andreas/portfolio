@@ -40,7 +40,7 @@ export function ContactForm() {
             <div>
               <p className="text-green-500">Message sent successfully!</p>
               <p className="mt-1 text-sm text-green-500/80">
-                Thank you for reaching out. I'll get back to you soon.
+                Thank you for reaching out. I&apos;ll get back to you soon.
               </p>
             </div>
           </div>

@@ -1,8 +1,9 @@
+import { Home } from "lucide-react";
+import { redirect } from "next/navigation";
+
 import { ButtonLink } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link/link";
-import { Home } from "lucide-react";
-import { redirect } from "next/navigation";
 
 export default function NotFound() {
   if (process.env.NEXT_PUBLIC_MAINTENANCE === "true") {
@@ -24,7 +25,8 @@ export default function NotFound() {
         <div className="mb-12 space-y-4">
           <Heading type="h2">Page Not Found</Heading>
           <p className="mx-auto max-w-md text-muted-foreground">
-            Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+            Oops! The page you&apos;re looking for doesn&apos;t exist. It might have been moved or
+            deleted.
           </p>
         </div>
 

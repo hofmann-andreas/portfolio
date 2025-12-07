@@ -1,6 +1,7 @@
-import { Heading } from "@/components/heading";
-import { Wrench, Mail, Clock } from "lucide-react";
+import { Clock, Mail, Wrench } from "lucide-react";
 import { redirect } from "next/navigation";
+
+import { Heading } from "@/components/heading";
 
 export default function Maintenance() {
   if (process.env.NEXT_PUBLIC_MAINTENANCE !== "true") {
@@ -24,8 +25,8 @@ export default function Maintenance() {
         <div className="mb-12 space-y-4">
           <Heading type="h1">Under Maintenance</Heading>
           <p className="mx-auto max-w-md text-muted-foreground">
-            The site is currently undergoing scheduled maintenance to improve your experience. We'll
-            be back online shortly.
+            The site is currently undergoing scheduled maintenance to improve your experience.
+            We&apos;ll be back online shortly.
           </p>
         </div>
 

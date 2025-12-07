@@ -1,8 +1,10 @@
-import { JsonLd } from "@/components/json-ld/json-ld";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
+import { Person, WebSite } from "schema-dts";
+
+import { JsonLd } from "@/components/json-ld/json-ld";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hofmannandreas.com"),
@@ -34,13 +36,13 @@ export const metadata: Metadata = {
   },
 };
 
-const websiteJsonLd = {
+const websiteJsonLd: WebSite = {
   "@type": "WebSite",
   name: "Andreas Hofmann – Portfolio",
   url: "https://hofmannandreas.com",
 };
 
-const personJsonLd = {
+const personJsonLd: Person = {
   "@type": "Person",
   name: "Andreas Hofmann",
   jobTitle: "Software Developer",

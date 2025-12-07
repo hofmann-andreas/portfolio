@@ -34,12 +34,12 @@ export function ProjectsSection() {
 
             <Heading type="h3">Coming Soon!</Heading>
             <p className="text-muted-foreground">
-              I'm currently working on some exciting projects that will be showcased here soon. Stay
-              tuned for updates on my latest work in web development and innovative solutions.
+              I&apos;m currently working on some exciting projects that will be showcased here soon.
+              Stay tuned for updates on my latest work in web development and innovative solutions.
             </p>
             <p className="text-muted-foreground">
               In the meantime, feel free to check out my experience and tech stack, or get in touch
-              if you'd like to discuss potential collaborations.
+              if you&apos;d like to discuss potential collaborations.
             </p>
           </div>
         </div>

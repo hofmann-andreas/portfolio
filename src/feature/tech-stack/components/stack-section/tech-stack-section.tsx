@@ -1,9 +1,8 @@
-import { Badge } from "@/components/badge/badge";
-import { Card } from "@/components/card";
+import { Code2, Database, Wrench } from "lucide-react";
+
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
-import { Code2, Database, Wrench } from "lucide-react";
 import { TechStackData } from "../../types";
 
 export function TechStackSection() {

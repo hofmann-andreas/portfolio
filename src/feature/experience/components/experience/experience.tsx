@@ -1,7 +1,8 @@
 import { Badge } from "@/components/badge/badge";
-import { Heading } from "@/components/heading";
-import { ExperienceData } from "../../types";
 import { Card } from "@/components/card";
+import { Heading } from "@/components/heading";
+
+import { ExperienceData } from "../../types";
 
 interface ExperienceProps {
   experience: ExperienceData;
