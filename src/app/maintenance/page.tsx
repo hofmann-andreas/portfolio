@@ -1,3 +1,4 @@
+import { Heading } from "@/components/heading";
 import { Wrench, Mail, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 
@@ -21,37 +22,35 @@ export default function Maintenance() {
         </div>
 
         <div className="mb-12 space-y-4">
-          <h1 className="text-foreground">Under Maintenance</h1>
+          <Heading type="h1">Under Maintenance</Heading>
           <p className="mx-auto max-w-md text-muted-foreground">
             The site is currently undergoing scheduled maintenance to improve your experience. We'll
             be back online shortly.
           </p>
         </div>
 
-        {/* Status Cards */}
         <div className="mb-12 grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border border-border bg-card p-6">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
               <Clock className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="mb-2">Estimated Time</h3>
+            <p className="mb-2">Estimated Time</p>
             <p className="text-sm text-muted-foreground">We expect to be back within a few hours</p>
           </div>
           <div className="rounded-lg border border-border bg-card p-6">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
               <Mail className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="mb-2">Need to Reach Me?</h3>
+            <p className="mb-2">Need to Reach Me?</p>
             <a
-              href="mailto:andreas.hofmann@example.com"
+              href="mailto:dev.andreas.hofmann@gmail.com"
               className="text-sm text-primary hover:underline"
             >
-              andreas.hofmann@example.com
+              dev.andreas.hofmann@gmail.com
             </a>
           </div>
         </div>
 
-        {/* Additional Info */}
         <div className="border-t border-border pt-8">
           <p className="text-sm text-muted-foreground">
             Thank you for your patience while we make improvements to the site.

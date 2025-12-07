@@ -1,11 +1,12 @@
 "use client";
 
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Briefcase } from "lucide-react";
 
 import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { scrollToSection } from "@/utils/scroll-to-section";
+import { Card } from "@/components/card";
 
 export function HeroSection() {
   return (
@@ -16,12 +17,18 @@ export function HeroSection() {
             <Badge>Welcome to my portfolio</Badge>
           </div>
           <h1 className="mb-6 text-5xl md:text-7xl">
-            Hi, I&apos;m <span className="text-primary">Andreas Hofmann</span>
+            Hi, I'm <span className="text-primary">Andreas Hofmann</span>
           </h1>
-          <p className="mb-8 max-w-3xl text-xl text-muted-foreground md:text-2xl">
-            A passionate software developer specializing in building exceptional digital experiences
-            with Next.js and TypeScript
+          <p className="mb-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
+            I build scalable, high-quality web experiences with Next.js, TypeScript, and modern
+            frontend architectures.
           </p>
+          <div className="mb-8 flex items-center justify-center gap-2 text-muted-foreground">
+            <Icon icon={Briefcase} size={16} className="text-primary" />
+            <p className="text-muted-foreground">
+              Currently working at <span className="text-foreground">Interdiscount</span>
+            </p>
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Button onClick={() => scrollToSection("contact")}>Get in Touch</Button>
             <Button variant="secondary" onClick={() => scrollToSection("experience")}>

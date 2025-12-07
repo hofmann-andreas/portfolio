@@ -33,8 +33,8 @@ export function ContactSection() {
       <div className="grid gap-12 md:grid-cols-2">
         <div className="space-y-8">
           <p className="text-muted-foreground">
-            I&apos;m always interested in hearing about new opportunities, collaborations, or just
-            having a chat about technology. Feel free to reach out!
+            I'm always open to exchanging ideas, discussing interesting projects, or exploring new
+            opportunities. If you'd like to get in touch, feel free to reach out.
           </p>
           <div className="space-y-6">
             {contactMethod.map(({ icon, label, text, href }) => (

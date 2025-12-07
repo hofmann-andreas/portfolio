@@ -19,43 +19,27 @@ export function AboutSection() {
   ];
 
   return (
-    <Section id="about" title="About Me">
-      <div className="grid items-center gap-12 md:grid-cols-2">
-        <div className="flex flex-col gap-4 text-muted-foreground">
-          <p>
-            Hi, I&apos;m Andreas Hofmann, a passionate software developer specializing in modern web
-            development with Next.js and TypeScript. I love building elegant, performant, and
-            user-friendly applications.
-          </p>
-          <p>
-            With years of experience in the industry, I&apos;ve worked on diverse projects ranging
-            from e-commerce platforms to complex web applications. I&apos;m always eager to learn
-            new technologies and best practices to deliver exceptional solutions.
-          </p>
-          <p>
-            When I&apos;m not coding, you can find me exploring the latest web technologies,
-            contributing to open-source projects, or sharing my knowledge with the developer
-            community.
-          </p>
-        </div>
-        <Card>
-          <Heading type="h3" marginBottom="md">
-            What I Do
-          </Heading>
-          <div className="space-y-4">
-            {points.map((point) => (
-              <div className="flex items-start gap-4" key={point.title}>
-                <div className="mt-2 min-h-2 min-w-2 rounded-full bg-primary" />
-                <div>
-                  <Heading type="h4" marginBottom="xs">
-                    {point.title}
-                  </Heading>
-                  <p className="text-muted-foreground">{point.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Card>
+    <Section id="about" title="About Me" align="center">
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 text-muted-foreground">
+        <p>
+          I'm a software developer specializing in modern frontend development with a strong focus
+          on Next.js, TypeScript, and React.
+        </p>
+        <p>
+          At Interdiscount, I work on a high-traffic e-commerce platform where I help build new
+          features, migrate legacy architectures, and ensure production stability. I have hands-on
+          experience with frontend migrations, performance improvements, and maintaining complex
+          applications in real-world environments.
+        </p>
+        <p>
+          While my main strength is frontend engineering, I also bring solid full-stack knowledge.
+          I've worked with Node.js, Express, REST APIs, and relational databases, which allows me to
+          collaborate effectively across backend and frontend boundaries.
+        </p>
+        <p>
+          I value clean code, maintainability, and pragmatic solutions, and I enjoy working in agile
+          teams where quality and ownership matter.
+        </p>
       </div>
     </Section>
   );

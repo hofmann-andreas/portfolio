@@ -6,11 +6,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@/components/button";
 import { FormInput } from "@/components/form-input";
 import { FormTextArea } from "@/components/form-text-area";
-import {
-  emailValidation,
-  messageValidation,
-  nameValidation,
-} from "@/utils/form-validation/form-validation";
+import { emailValidation, messageValidation, nameValidation } from "@/utils/form-validation";
 
 import { ContactFormData } from "../../types";
 import { useContactSubmit } from "../../use-contact-submit/use-contact-submit";
@@ -44,7 +40,7 @@ export function ContactForm() {
             <div>
               <p className="text-green-500">Message sent successfully!</p>
               <p className="mt-1 text-sm text-green-500/80">
-                Thank you for reaching out. I&apos;ll get back to you soon.
+                Thank you for reaching out. I'll get back to you soon.
               </p>
             </div>
           </div>

@@ -31,11 +31,11 @@ export function ExperienceSection() {
                 <p className="text-muted-foreground">{experience.description}</p>
                 <div>
                   <Heading type="h4" marginBottom="sm">
-                    Achievements
+                    Focus Areas
                   </Heading>
                   <ul className="list-inside list-disc text-muted-foreground">
-                    {experience.achievements.map((achievement, index) => (
-                      <li key={index}>{achievement}</li>
+                    {experience.focusAreas.map((area, index) => (
+                      <li key={index}>{area}</li>
                     ))}
                   </ul>
                 </div>

@@ -3,6 +3,6 @@ export interface Experience {
   company: string;
   period: string;
   description: string;
-  achievements: string[];
+  focusAreas: string[];
   stack: string[];
 }

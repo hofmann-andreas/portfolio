@@ -16,6 +16,7 @@ export function Footer() {
             <p className="mt-1 text-muted-foreground">
               Software Developer specializing in Next.js and TypeScript
             </p>
+            <p className="text-muted-foreground">Based in Switzerland</p>
           </div>
 
           <div className="flex items-center gap-4">

@@ -5,21 +5,21 @@ export const techStack: Array<TechStack> = [
     category: "Frontend",
     technologies: [
       "Next.js",
+      "React",
       "TypeScript",
       "SWR",
-      "Tailwind CSS",
-      "React",
       "JavaScript",
+      "Tailwind CSS",
       "HTML",
       "CSS",
     ],
   },
   {
     category: "Backend",
-    technologies: ["Express.js", "Node.js", "Sequelize", "MySQL", "Java"],
+    technologies: ["Node.js", "Express.js", "Java", "Sequelize", "MySQL"],
   },
   {
-    category: "DevOps & Tools",
-    technologies: ["Git", "Docker", "CI/CD", "ArgoCD", "Firebase", "Playwright", "Jest", "REST"],
+    category: "Tooling & Workflows",
+    technologies: ["Git", "ArgoCD", "Playwright", "Firebase", "Jest", "REST", "Vercel"],
   },
 ];
