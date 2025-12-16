@@ -1,15 +1,22 @@
 import { Home } from "lucide-react";
-import { redirect } from "next/navigation";
+import { Metadata } from "next";
 
 import { ButtonLink } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link/link";
 
-export default function NotFound() {
-  if (process.env.NEXT_PUBLIC_MAINTENANCE === "true") {
-    redirect("/maintenance");
-  }
+export const metadata: Metadata = {
+  title: "404 – Page not found",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: null,
+  },
+};
 
+export default function NotFound() {
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
       <div className="relative z-10 w-full max-w-2xl text-center">
@@ -31,7 +38,7 @@ export default function NotFound() {
         </div>
 
         <div className="flex flex-row justify-center">
-          <ButtonLink href="/">
+          <ButtonLink href="/" className="text-[#e8eaed]!">
             <Home className="h-5 w-5" />
             Back to Home
           </ButtonLink>

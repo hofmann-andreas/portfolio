@@ -12,27 +12,27 @@ export const metadata: Metadata = {
   description:
     "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
   authors: [{ name: "Andreas Hofmann" }],
-  manifest: "/next-assets/manifest.json",
+  manifest: "https://hofmannandreas.com/next-assets/manifest.json",
   icons: {
-    icon: "/next-assets/icons/favicon.ico",
-    apple: "/next-assets/icons/apple-icon.png",
+    icon: "https://hofmannandreas.com/next-assets/icons/favicon.ico",
+    apple: "https://hofmannandreas.com/next-assets/icons/apple-icon.png",
   },
   openGraph: {
     title: "Andreas Hofmann – Software Developer",
     description:
       "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
-    url: "/",
+    url: "https://hofmannandreas.com",
     siteName: "Andreas Hofmann Portfolio",
     locale: "en_CH",
     type: "website",
-    images: ["/next-assets/icons/og.png"],
+    images: ["https://hofmannandreas.com/next-assets/icons/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Andreas Hofmann – Software Developer",
     description:
       "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
-    images: ["/next-assets/icons/og.png"],
+    images: ["https://hofmannandreas.com/next-assets/icons/og.png"],
   },
 };
 
@@ -62,7 +62,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <JsonLd id="person-jsonld" data={personJsonLd} />
         <JsonLd id="website-jsonld" data={websiteJsonLd} />
       </head>

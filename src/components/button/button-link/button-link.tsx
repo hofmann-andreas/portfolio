@@ -17,13 +17,10 @@ export function ButtonLink(props: ButtonLinkProps) {
     ...rest
   } = props;
   const baseClassnames = getButtonBaseClassnames({ isFullWidth, hasMinWidthFromMD });
-  const variantClassnames = getButtonVariantClasses(variant);
+  const variantClassnames = getButtonVariantClasses({ variant });
 
   return (
-    <Link
-      className={clsx(baseClassnames, variantClassnames, className, { "w-full": isFullWidth })}
-      {...rest}
-    >
+    <Link className={clsx(baseClassnames, variantClassnames, className)} {...rest}>
       {children}
     </Link>
   );

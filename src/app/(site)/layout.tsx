@@ -1,17 +1,19 @@
-import { redirect } from "next/navigation";
+import { Metadata } from "next";
 
 import { Footer } from "@/feature/footer/components/footer";
 import { Header } from "@/feature/header/components/header";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function SiteLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.NEXT_PUBLIC_MAINTENANCE === "true") {
-    redirect("/maintenance");
-  }
-
   return (
     <>
       <Header />

@@ -19,13 +19,10 @@ export function Button(props: ButtonProps) {
     ...rest
   } = props;
   const baseClassnames = getButtonBaseClassnames({ isFullWidth, hasMinWidthFromMD });
-  const variantClassnames = getButtonVariantClasses(variant);
+  const variantClassnames = getButtonVariantClasses({ variant });
 
   return (
-    <button
-      className={clsx(baseClassnames, variantClassnames, className, { "w-full": isFullWidth })}
-      {...rest}
-    >
+    <button className={clsx(baseClassnames, variantClassnames, className)} {...rest}>
       {children}
     </button>
   );
