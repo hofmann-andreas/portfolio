@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Person, WebSite } from "schema-dts";
+import { Person, WebPage, WebSite } from "schema-dts";
 
 import { JsonLd } from "@/components/json-ld/json-ld";
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Andreas Hofmann – Software Developer",
     description:
       "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
-    url: "https://hofmannandreas.com",
+    url: "https://hofmannandreas.com/",
     siteName: "Andreas Hofmann Portfolio",
     locale: "en_CH",
     type: "website",
@@ -38,20 +38,43 @@ export const metadata: Metadata = {
 
 const websiteJsonLd: WebSite = {
   "@type": "WebSite",
+  "@id": "https://hofmannandreas.com/#website",
   name: "Andreas Hofmann – Portfolio",
-  url: "https://hofmannandreas.com",
+  url: "https://hofmannandreas.com/",
+  publisher: {
+    "@id": "https://hofmannandreas.com/#person",
+  },
 };
 
 const personJsonLd: Person = {
   "@type": "Person",
+  "@id": "https://hofmannandreas.com/#person",
   name: "Andreas Hofmann",
   jobTitle: "Software Developer",
-  url: "https://hofmannandreas.com",
+  url: "https://hofmannandreas.com/",
   sameAs: ["https://github.com/hofmann-andreas", "https://www.linkedin.com/in/hofmann-andreas"],
   worksFor: {
     "@type": "Organization",
     name: "Interdiscount",
   },
+};
+
+const homePageJsonLd: WebPage = {
+  "@type": "WebPage",
+  "@id": "https://hofmannandreas.com/#homepage",
+  url: "https://hofmannandreas.com/",
+  name: "Andreas Hofmann – Software Developer",
+  isPartOf: {
+    "@id": "https://hofmannandreas.com/#website",
+  },
+  about: {
+    "@id": "https://hofmannandreas.com/#person",
+  },
+};
+
+const jsonLdGraph = {
+  "@context": "https://schema.org",
+  "@graph": [personJsonLd, websiteJsonLd, homePageJsonLd],
 };
 
 export default function RootLayout({
@@ -62,8 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <JsonLd id="person-jsonld" data={personJsonLd} />
-        <JsonLd id="website-jsonld" data={websiteJsonLd} />
+        <JsonLd id="schema-graph" data={jsonLdGraph} />
       </head>
       <body>
         {children}

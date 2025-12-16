@@ -1,18 +1,17 @@
-import Script from "next/script";
-import { Thing } from "schema-dts";
+type JsonLd = Record<string, unknown>;
 
-interface JsonLdProps<T extends Thing> {
-  data: T;
+interface JsonLdProps {
+  data: JsonLd;
   id: string;
 }
 
-export function JsonLd<T extends Thing>({ data, id }: JsonLdProps<T>) {
+export function JsonLd({ data, id }: JsonLdProps) {
   return (
-    <Script
+    <script
       id={id}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify({ "@context": "https://schema.org", ...(data as object) }),
+        __html: JSON.stringify(data),
       }}
     />
   );
