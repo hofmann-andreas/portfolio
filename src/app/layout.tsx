@@ -8,7 +8,7 @@ import { Person, WebPage, WebSite } from "schema-dts";
 import { JsonLd } from "@/components/json-ld/json-ld";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hofmannandreas.com"),
+  metadataBase: new URL("https://hofmannandreas.com/"),
   title: "Andreas Hofmann – Software Developer",
   description:
     "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
