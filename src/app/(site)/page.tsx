@@ -9,7 +9,7 @@ import { TechStackSection } from "@/feature/tech-stack/components/stack-section/
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/",
+    canonical: "https://hofmannandreas.com/",
   },
 };
 
