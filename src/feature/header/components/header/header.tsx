@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/button";
 
+import { NavItem } from "../../types";
 import { DesktopNav } from "../desktop-nav";
 import { MobileNav } from "../mobile-nav/mobile-nav";
 
@@ -29,6 +30,23 @@ export function Header() {
     return () => window.removeEventListener("resize", handler);
   }, []);
 
+  const navItems: Array<NavItem> = [
+    { label: "About", id: "about" },
+    { label: "Experience", id: "experience" },
+    { label: "Stack", id: "stack" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
+    {
+      label: "Resume",
+      id: "resume",
+      options: {
+        href: "/next-assets/pdf/resume-hofmann-andreas.pdf",
+        isDownload: true,
+        fileName: "resume-hofmann-andreas.pdf",
+      },
+    },
+  ];
+
   return (
     <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-4">
@@ -38,7 +56,7 @@ export function Header() {
             <span className="text-sm text-muted-foreground">Software Developer</span>
           </div>
 
-          <DesktopNav />
+          <DesktopNav navItems={navItems} />
 
           <div className="text-foreground md:hidden">
             <Button
@@ -51,7 +69,7 @@ export function Header() {
           </div>
         </div>
 
-        {isMenuOpen && <MobileNav onNavigate={() => setIsMenuOpen(false)} />}
+        {isMenuOpen && <MobileNav navItems={navItems} onNavigate={() => setIsMenuOpen(false)} />}
       </div>
     </header>
   );
