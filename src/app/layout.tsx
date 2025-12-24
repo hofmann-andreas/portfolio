@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   description:
     "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
   authors: [{ name: "Andreas Hofmann" }],
-  manifest: "https://hofmannandreas.com/next-assets/manifest.json",
-  icons: {
-    icon: "https://hofmannandreas.com/next-assets/icons/favicon.ico",
-    apple: "https://hofmannandreas.com/next-assets/icons/apple-icon.png",
-  },
   openGraph: {
     title: "Andreas Hofmann – Software Developer",
     description:
