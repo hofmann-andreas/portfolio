@@ -5,6 +5,7 @@ import { ArrowDown, Briefcase } from "lucide-react";
 import { Badge } from "@/components/badge/badge";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
+import { Typewriter } from "@/components/typewriter/typewriter";
 import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeroSection() {
@@ -36,7 +37,20 @@ export function HeroSection() {
             className="mb-6 animate-hero-fade-up text-5xl font-bold md:text-7xl"
             style={{ animationDelay: "250ms" }}
           >
-            Hi, I&apos;m <span className="text-primary">Andreas Hofmann</span>
+            <span className="grid">
+              <span className="invisible col-start-1 row-start-1 text-center" aria-hidden>
+                Hi, I&apos;m Andreas Hofmann
+              </span>
+              <span className="col-start-1 row-start-1 text-center">
+                Hi, I&apos;m{" "}
+                <Typewriter
+                  text="Andreas Hofmann"
+                  delay={400}
+                  speed={55}
+                  className="text-primary"
+                />
+              </span>
+            </span>
           </h1>
           <p
             className="mb-4 max-w-3xl animate-hero-fade-up text-lg text-muted-foreground md:text-xl"
