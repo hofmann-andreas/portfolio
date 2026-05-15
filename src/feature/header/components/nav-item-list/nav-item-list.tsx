@@ -10,10 +10,16 @@ import { isDownloadItem } from "../../util/is-download-item";
 interface NavItemListProps {
   navItems: Array<NavItem>;
   isMobile?: boolean;
+  activeSection?: string;
   onClick?: (sectionId: string) => void;
 }
 
-export function NavItemList({ navItems, isMobile = false, onClick }: NavItemListProps) {
+export function NavItemList({
+  navItems,
+  isMobile = false,
+  activeSection = "",
+  onClick,
+}: NavItemListProps) {
   const handleClick = (sectionId: string) => {
     if (onClick) {
       onClick(sectionId);
@@ -40,11 +46,16 @@ export function NavItemList({ navItems, isMobile = false, onClick }: NavItemList
           );
         }
 
+        const isActive = activeSection === navItem.id;
+
         return (
           <Button
             key={navItem.id}
             variant="text"
-            className={clsx(isMobile && "py-2 text-2xl font-medium")}
+            className={clsx(
+              isMobile && "py-2 text-2xl font-medium",
+              isActive ? "text-primary" : "text-muted-foreground"
+            )}
             onClick={() => handleClick(navItem.id)}
           >
             {navItem.label}

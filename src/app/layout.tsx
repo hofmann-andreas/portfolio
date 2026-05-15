@@ -79,8 +79,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('theme');document.documentElement.className=t==='light'?'':'dark';})()`,
+          }}
+        />
         <JsonLd id="schema-graph" data={jsonLdGraph} />
       </head>
       <body>

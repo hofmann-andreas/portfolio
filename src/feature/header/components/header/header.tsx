@@ -4,13 +4,16 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/button";
+import { ThemeToggle } from "@/components/theme-toggle/theme-toggle";
 
+import { useActiveSection } from "../../hooks/use-active-section";
 import { NavItem } from "../../types";
 import { DesktopNav } from "../desktop-nav";
 import { MobileNav } from "../mobile-nav/mobile-nav";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeSection = useActiveSection(["about", "experience", "stack", "projects", "contact"]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -57,11 +60,14 @@ export function Header() {
               <span className="text-sm text-muted-foreground">Software Developer</span>
             </div>
 
-            <DesktopNav navItems={navItems} />
-
-            <div className="text-foreground md:hidden">
+            <div className="flex items-center gap-4">
+              <DesktopNav navItems={navItems} activeSection={activeSection} />
+              <span className="hidden md:flex">
+                <ThemeToggle />
+              </span>
               <Button
                 variant="text"
+                className="md:hidden"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               >
@@ -72,7 +78,13 @@ export function Header() {
         </div>
       </header>
 
-      {isMenuOpen && <MobileNav navItems={navItems} onNavigate={() => setIsMenuOpen(false)} />}
+      {isMenuOpen && (
+        <MobileNav
+          navItems={navItems}
+          activeSection={activeSection}
+          onNavigate={() => setIsMenuOpen(false)}
+        />
+      )}
     </>
   );
 }
