@@ -15,7 +15,7 @@ export function Experience(props: ExperienceProps) {
   const { experience } = props;
 
   return (
-    <div className="relative border-l-2 border-primary pl-8">
+    <div className="relative border-l-2 border-primary pl-5 md:pl-8">
       <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full bg-primary" />
 
       <Card>
