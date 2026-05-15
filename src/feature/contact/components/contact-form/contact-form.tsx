@@ -21,7 +21,8 @@ export function ContactForm() {
     mode: "onBlur",
   });
 
-  const { submitContactData, isSuccess, isSubmitting, hasError } = useContactSubmit();
+  const { submitContactData, isSuccess, isSubmitting, hasError, cooldownRemaining } =
+    useContactSubmit();
 
   const onSubmit: SubmitHandler<ContactFormData> = async (values: ContactFormData) => {
     await submitContactData(values);
@@ -48,12 +49,12 @@ export function ContactForm() {
 
         {hasError && (
           <div
-            className="flex items-center gap-3 rounded-lg border border-destructive/20 bg-destructive/10 p-4"
+            className="flex items-center gap-3 rounded-lg border border-destructive/40 bg-destructive/15 p-4"
             role="alert"
             aria-live="polite"
           >
-            <AlertCircle className="h-5 w-5 shrink-0 text-destructive" />
-            <p className="text-sm text-destructive">
+            <AlertCircle className="h-5 w-5 shrink-0 text-destructive dark:text-red-400" />
+            <p className="text-sm text-destructive dark:text-red-400">
               Something went wrong. Please try again or contact me via email directly.
             </p>
           </div>
@@ -85,8 +86,12 @@ export function ContactForm() {
           {...register("message", messageValidation)}
         />
 
-        <Button type="submit" isFullWidth disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
+        <Button type="submit" isFullWidth isLoading={isSubmitting} disabled={cooldownRemaining > 0}>
+          {isSubmitting
+            ? "Sending..."
+            : cooldownRemaining > 0
+              ? `Try again in ${cooldownRemaining}s`
+              : "Send Message"}
         </Button>
       </form>
     </div>

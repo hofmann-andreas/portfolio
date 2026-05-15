@@ -12,10 +12,13 @@ export function getButtonBaseClassnames({
   isFullWidth,
   hasMinWidthFromMD,
 }: ButtonBaseClassnamesProps) {
-  return clsx("items-center justify-center", {
-    "w-full": isFullWidth,
-    "md:w-min": hasMinWidthFromMD,
-  });
+  return clsx(
+    "items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+    {
+      "w-full": isFullWidth,
+      "md:w-min": hasMinWidthFromMD,
+    }
+  );
 }
 
 interface ButtonVariantClassesProps {

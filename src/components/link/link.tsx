@@ -19,7 +19,7 @@ export function Link(props: LinkProps) {
       {...externalProps}
       {...rest}
       className={clsx(
-        "flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary",
+        "flex items-center gap-2 rounded-sm text-muted-foreground transition-colors hover:text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none",
         className
       )}
     >

@@ -61,6 +61,7 @@
   --color-destructive-foreground: #fb2c36;
   --color-border: #374151;
   --color-input: #2d3748;
+  --color-input-background: #2d3748;
   --color-ring: #60a5fa;
   --color-font-weight-medium: 500;
   --color-font-weight-normal: 400;
@@ -127,5 +128,21 @@ html {
   }
   main > section:nth-child(even) {
     @apply bg-muted/30;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #0a0a0a !important;
+    caret-color: #0a0a0a;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #e8eaed !important;
+    caret-color: #e8eaed;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
