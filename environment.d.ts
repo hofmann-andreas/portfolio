@@ -3,3 +3,5 @@ namespace NodeJS {
     NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: string;
   }
 }
+
+declare module "*.css" {}
