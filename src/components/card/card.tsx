@@ -13,7 +13,7 @@ export function Card(props: CardProps) {
   const { children, image } = props;
 
   return (
-    <div className="rounded-lg border border-border bg-card">
+    <div className="rounded-lg border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
       {image && (
         <Image
           src={image?.src || ""}

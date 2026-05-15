@@ -18,7 +18,7 @@ export const ProjectCardV2 = (props: ProjectCardV2Props) => {
   return (
     <div
       key={project.title}
-      className="group overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary"
+      className="group overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg hover:shadow-primary/5"
     >
       <div className="relative h-48 overflow-hidden">
         <Image
