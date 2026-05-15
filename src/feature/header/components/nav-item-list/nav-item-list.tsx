@@ -32,7 +32,7 @@ export function NavItemList({ navItems, isMobile = false, onClick }: NavItemList
             <Button
               key={navItem.id}
               variant="secondary"
-              className={clsx(isMobile ? "px-4! py-1.5!" : "px-4! py-2!")}
+              className={clsx(isMobile ? "mt-2 px-8! py-2.5! text-lg!" : "px-4! py-2!")}
               onClick={() => downloadFile({ href, fileName })}
             >
               {navItem.label}
@@ -41,7 +41,12 @@ export function NavItemList({ navItems, isMobile = false, onClick }: NavItemList
         }
 
         return (
-          <Button key={navItem.id} variant="text" onClick={() => handleClick(navItem.id)}>
+          <Button
+            key={navItem.id}
+            variant="text"
+            className={clsx(isMobile && "py-2 text-2xl font-medium")}
+            onClick={() => handleClick(navItem.id)}
+          >
             {navItem.label}
           </Button>
         );

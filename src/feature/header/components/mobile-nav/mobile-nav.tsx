@@ -22,7 +22,7 @@ export const MobileNav = (props: MobileNavProps) => {
   };
 
   return (
-    <nav className="mt-4 flex flex-col items-end gap-4 border-t border-border pt-4 pb-4 md:hidden">
+    <nav className="bg-background/90 fixed inset-0 z-40 flex animate-menu-in flex-col items-center justify-center gap-6 backdrop-blur-2xl md:hidden">
       <NavItemList navItems={navItems} isMobile onClick={handleClick} />
     </nav>
   );

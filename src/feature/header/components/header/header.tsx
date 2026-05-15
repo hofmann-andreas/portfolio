@@ -48,29 +48,31 @@ export function Header() {
   ];
 
   return (
-    <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-foreground">Andreas Hofmann</span>
-            <span className="text-sm text-muted-foreground">Software Developer</span>
-          </div>
+    <>
+      <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
+        <div className="mx-auto max-w-7xl px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex flex-col">
+              <span className="text-foreground">Andreas Hofmann</span>
+              <span className="text-sm text-muted-foreground">Software Developer</span>
+            </div>
 
-          <DesktopNav navItems={navItems} />
+            <DesktopNav navItems={navItems} />
 
-          <div className="text-foreground md:hidden">
-            <Button
-              variant="text"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Open navigation menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+            <div className="text-foreground md:hidden">
+              <Button
+                variant="text"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
           </div>
         </div>
+      </header>
 
-        {isMenuOpen && <MobileNav navItems={navItems} onNavigate={() => setIsMenuOpen(false)} />}
-      </div>
-    </header>
+      {isMenuOpen && <MobileNav navItems={navItems} onNavigate={() => setIsMenuOpen(false)} />}
+    </>
   );
 }
