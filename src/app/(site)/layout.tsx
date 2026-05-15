@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/back-to-top/back-to-top";
 import { ScrollProgress } from "@/components/scroll-progress/scroll-progress";
 import { TabTitle } from "@/components/tab-title/tab-title";
 import { Footer } from "@/feature/footer/components/footer";
@@ -15,6 +16,7 @@ export default function SiteLayout({
       <Header />
       <main>{children}</main>
       <Footer />
+      <BackToTop />
     </>
   );
 }
