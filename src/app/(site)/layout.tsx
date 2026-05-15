@@ -1,3 +1,5 @@
+import { ScrollProgress } from "@/components/scroll-progress/scroll-progress";
+import { TabTitle } from "@/components/tab-title/tab-title";
 import { Footer } from "@/feature/footer/components/footer";
 import { Header } from "@/feature/header/components/header";
 
@@ -8,6 +10,8 @@ export default function SiteLayout({
 }>) {
   return (
     <>
+      <ScrollProgress />
+      <TabTitle />
       <Header />
       <main>{children}</main>
       <Footer />
