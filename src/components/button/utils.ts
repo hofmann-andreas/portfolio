@@ -13,7 +13,7 @@ export function getButtonBaseClassnames({
   hasMinWidthFromMD,
 }: ButtonBaseClassnamesProps) {
   return clsx(
-    "items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+    "cursor-pointer items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
     {
       "w-full": isFullWidth,
       "md:w-min": hasMinWidthFromMD,
@@ -33,7 +33,10 @@ export function getButtonVariantClasses({ variant }: ButtonVariantClassesProps) 
     secondary: clsx(
       "px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"
     ),
-    text: clsx("hover:text-primary transition-colors"),
+    text: clsx(
+      "relative transition-colors hover:text-primary",
+      "after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+    ),
   };
 
   return buttonVariants[variant];
