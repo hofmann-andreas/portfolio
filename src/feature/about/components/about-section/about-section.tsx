@@ -1,3 +1,4 @@
+import { AnimatedCounter } from "@/components/animated-counter/animated-counter";
 import { Section } from "@/components/section";
 
 const stats = [
@@ -33,8 +34,10 @@ export function AboutSection() {
               key={stat.label}
               className="flex flex-col items-center gap-1 rounded-xl border border-border bg-card px-4 py-5"
             >
-              <span className="text-2xl font-bold text-primary">{stat.value}</span>
-              <span className="text-center text-sm text-muted-foreground">{stat.label}</span>
+              <AnimatedCounter value={stat.value} className="text-2xl font-bold text-primary" />
+              <span className="text-center text-xs text-muted-foreground md:text-sm">
+                {stat.label}
+              </span>
             </div>
           ))}
         </div>
