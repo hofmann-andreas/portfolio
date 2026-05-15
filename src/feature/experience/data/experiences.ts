@@ -2,9 +2,11 @@ import { ExperienceData } from "../types";
 
 export const experiences: Array<ExperienceData> = [
   {
+    id: "interdiscount-dev",
     role: "Software Developer",
     company: "Interdiscount",
     period: "Aug 2024 - Present",
+    isCurrent: true,
     description:
       "I work on a large-scale e-commerce platform, focusing on frontend development and migrations using Next.js and TypeScript. My role involves maintaining production systems, improving platform stability, and collaborating closely with cross-functional teams in an agile environment.",
     focusAreas: [
@@ -30,6 +32,7 @@ export const experiences: Array<ExperienceData> = [
     ],
   },
   {
+    id: "interdiscount-apprentice",
     role: "Software Developer Apprentice",
     company: "Interdiscount",
     period: "Aug 2020 - Jul 2024",
@@ -45,27 +48,20 @@ export const experiences: Array<ExperienceData> = [
       "Next.js",
       "React",
       "TypeScript",
-      "SWR",
       "JavaScript",
       "Tailwind CSS",
-      "HTML",
-      "CSS",
       "Express.js",
       "Node.js",
-      "Sequelize",
       "MySQL",
       "Hybris",
       "Spring Boot",
       "Java",
       "Git",
-      "ArgoCD",
-      "Firebase",
-      "Playwright",
-      "Jest",
     ],
   },
   {
-    role: "Software Developer Apprenice (Foundation Year)",
+    id: "noser-young-foundation",
+    role: "Software Developer Apprentice (Foundation Year)",
     company: "Noser Young",
     period: "Aug 2020 - Jul 2021",
     description:

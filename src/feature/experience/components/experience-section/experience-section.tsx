@@ -8,7 +8,7 @@ export function ExperienceSection() {
     <Section id="experience" title="Experience">
       <div className="space-y-12">
         {experiences.map((experience) => (
-          <Experience key={experience.company} experience={experience} />
+          <Experience key={experience.id} experience={experience} />
         ))}
       </div>
     </Section>
