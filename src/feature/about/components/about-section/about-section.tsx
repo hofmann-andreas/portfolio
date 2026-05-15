@@ -1,28 +1,43 @@
 import { Section } from "@/components/section";
 
+const stats = [
+  { value: "4+", label: "Years Experience" },
+  { value: "2", label: "Companies" },
+  { value: "15+", label: "Technologies" },
+];
+
 export function AboutSection() {
   return (
     <Section id="about" title="About Me" align="center">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 text-muted-foreground">
+      <div className="mx-auto flex max-w-3xl flex-col gap-6 text-muted-foreground">
         <p>
           I&apos;m a software developer specializing in modern frontend development with a strong
           focus on Next.js, TypeScript, and React.
         </p>
         <p>
-          At Interdiscount, I work on a high-traffic e-commerce platform where I help build new
-          features, migrate legacy architectures, and ensure production stability. I have hands-on
+          At Interdiscount, I work on a high-traffic e-commerce platform — building new features,
+          migrating legacy architectures, and ensuring production stability. I have hands-on
           experience with frontend migrations, performance improvements, and maintaining complex
           applications in real-world environments.
         </p>
         <p>
-          While my main strength is frontend engineering, I also bring solid full-stack knowledge.
-          I&apos;ve worked with Node.js, Express, REST APIs, and relational databases, which allows
-          me to collaborate effectively across backend and frontend boundaries.
+          While my main strength is frontend engineering, I also bring solid full-stack knowledge
+          with Node.js, Express, REST APIs, and relational databases — allowing me to collaborate
+          effectively across the full stack.
         </p>
-        <p>
-          I value clean code, maintainability, and pragmatic solutions, and I enjoy working in agile
-          teams where quality and ownership matter.
-        </p>
+
+        {/* Stats */}
+        <div className="mt-2 grid grid-cols-3 gap-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="flex flex-col items-center gap-1 rounded-xl border border-border bg-card px-4 py-5"
+            >
+              <span className="text-2xl font-bold text-primary">{stat.value}</span>
+              <span className="text-center text-sm text-muted-foreground">{stat.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );
