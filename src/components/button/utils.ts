@@ -25,7 +25,7 @@ interface ButtonVariantClassesProps {
 export function getButtonVariantClasses({ variant }: ButtonVariantClassesProps) {
   const buttonVariants: Record<ButtonVariant, string> = {
     primary: clsx(
-      "text-foreground bg-primary rounded-lg hover:bg-primary/70 transition-colors px-8 py-3"
+      "text-primary-foreground bg-primary rounded-lg hover:bg-primary/70 transition-colors px-8 py-3"
     ),
     secondary: clsx(
       "px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all"
