@@ -5,12 +5,13 @@ import { NavItemList } from "../nav-item-list";
 
 interface DesktopNavProps {
   navItems: Array<NavItem>;
+  activeSection: string;
 }
 
-export function DesktopNav({ navItems }: DesktopNavProps) {
+export function DesktopNav({ navItems, activeSection }: DesktopNavProps) {
   return (
     <nav className="hidden items-center gap-8 md:flex">
-      <NavItemList navItems={navItems} />
+      <NavItemList navItems={navItems} activeSection={activeSection} />
     </nav>
   );
 }
