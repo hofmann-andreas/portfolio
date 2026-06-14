@@ -1,4 +1,7 @@
+"use client";
+
 import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
 
 import { Badge } from "@/components/badge/badge";
 
@@ -8,11 +11,41 @@ interface ExperienceProps {
   experience: ExperienceData;
 }
 
-export function Experience(props: ExperienceProps) {
-  const { experience } = props;
+export function Experience({ experience }: ExperienceProps) {
+  const [visible, setVisible] = useState(
+    () =>
+      typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (visible) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div className="relative pb-6 pl-10 last:pb-2">
-      {/* Timeline dot */}
+    <div
+      ref={ref}
+      className="relative pb-6 pl-10 last:pb-2"
+      style={{
+        animation: "card-in 0.55s ease-out both",
+        animationPlayState: visible ? "running" : "paused",
+      }}
+    >
+      {/* Timeline dot — pops in 120ms after card starts */}
       <div
         className={clsx(
           "absolute top-[22px] left-0 h-3 w-3 -translate-x-1/2 rounded-full transition-colors",
@@ -20,6 +53,11 @@ export function Experience(props: ExperienceProps) {
             ? "bg-primary ring-4 ring-primary/20"
             : "border-2 border-muted-foreground/40 bg-app"
         )}
+        style={{
+          animation: "dot-pop 0.5s ease-out both",
+          animationDelay: "120ms",
+          animationPlayState: visible ? "running" : "paused",
+        }}
         aria-hidden="true"
       />
 

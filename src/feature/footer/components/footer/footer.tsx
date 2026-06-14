@@ -12,7 +12,7 @@ export function Footer() {
             <span className="font-display text-lg font-semibold tracking-tight text-foreground">
               Andreas Hofmann
             </span>
-            <p className="mt-0.5 font-display text-xs text-muted-foreground italic">
+            <p className="mt-0.5 font-display text-sm text-muted-foreground">
               Frontend Developer · Bern, Switzerland
             </p>
           </div>
@@ -46,7 +46,7 @@ export function Footer() {
 
         <div className="mt-8 flex items-center justify-between border-t border-border pt-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Andreas Hofmann. All rights reserved.</p>
-          <p className="font-display italic">Built with Next.js and TypeScript.</p>
+          <p className="font-display">Built with Next.js and TypeScript.</p>
         </div>
       </div>
     </footer>
