@@ -12,13 +12,16 @@ export function FormFieldWrapper(props: FormFieldWrapperProps) {
   const { children, label, error, id } = props;
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="text-sm font-medium text-foreground">
+        {label}
+      </label>
 
       <div className="flex flex-col gap-1">
         {children}
 
         {error && (
           <p
+            id={id ? `${id}-error` : undefined}
             className="flex items-center gap-1 text-sm text-destructive dark:text-red-400"
             role="alert"
             aria-live="polite"

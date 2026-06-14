@@ -11,9 +11,11 @@ import { NavItem } from "../../types";
 import { DesktopNav } from "../desktop-nav";
 import { MobileNav } from "../mobile-nav/mobile-nav";
 
+const SECTION_IDS = ["about", "experience", "stack", "projects", "contact"];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const activeSection = useActiveSection(["about", "experience", "stack", "projects", "contact"]);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";

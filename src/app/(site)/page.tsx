@@ -8,6 +8,8 @@ import { ProjectsSection } from "@/feature/projects/components/projects-section"
 import { TechStackSection } from "@/feature/tech-stack/components/stack-section/tech-stack-section";
 
 export const metadata: Metadata = {
+  description:
+    "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
   alternates: {
     canonical: "https://hofmannandreas.com/",
   },

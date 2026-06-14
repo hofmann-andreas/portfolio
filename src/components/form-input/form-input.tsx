@@ -15,6 +15,7 @@ export function FormInput(props: FormInputProps) {
     <FormFieldWrapper error={error} label={label} id={rest.id}>
       <input
         {...rest}
+        aria-describedby={error && rest.id ? `${rest.id}-error` : undefined}
         className={clsx(
           "w-full resize-none rounded border bg-input-background px-4 py-2.5 transition-colors placeholder:text-muted-foreground/50 focus:ring-2 focus:outline-none",
           {

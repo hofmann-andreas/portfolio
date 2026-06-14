@@ -9,5 +9,7 @@ export const downloadFile = (props: DownloadFileProps) => {
   const link = document.createElement("a");
   link.href = href;
   link.download = fileName;
+  document.body.appendChild(link);
   link.click();
+  link.remove();
 };

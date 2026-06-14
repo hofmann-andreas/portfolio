@@ -38,7 +38,7 @@ export default function NotFound() {
         </div>
 
         <div className="flex flex-row justify-center">
-          <ButtonLink href="/" className="text-[#e8eaed]!">
+          <ButtonLink href="/">
             <Home className="h-5 w-5" />
             Back to Home
           </ButtonLink>

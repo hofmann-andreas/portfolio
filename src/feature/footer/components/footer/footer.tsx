@@ -22,7 +22,7 @@ export function Footer() {
               <Icon icon="github" size={20} />
             </Link>
             <Link
-              href="https://linkedin.com/in/hofmann-andreas"
+              href="https://www.linkedin.com/in/hofmann-andreas"
               shouldOpenInNewWindow
               aria-label="View profile on LinkedIn"
               className="text-muted-foreground transition-colors hover:text-foreground"

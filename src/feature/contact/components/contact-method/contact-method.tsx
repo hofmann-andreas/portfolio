@@ -15,12 +15,12 @@ export function ContactMethod(props: ContactMethodProps) {
       </p>
       <div className="mt-1 flex items-center gap-3">
         <div className="shrink-0 text-primary">{icon}</div>
-        <p className="font-medium text-foreground dark:text-white">
+        <p className="font-medium text-foreground">
           {href ? (
             <a
               href={href}
               aria-label={ariaLabel}
-              className="text-foreground transition-colors hover:text-primary dark:text-white"
+              className="text-foreground transition-colors hover:text-primary"
             >
               {text}
             </a>
