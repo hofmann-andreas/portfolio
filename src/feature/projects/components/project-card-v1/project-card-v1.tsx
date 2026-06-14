@@ -1,5 +1,7 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+
+import { Icon } from "@/components/icon";
 
 import { ProjectData } from "../../types";
 
@@ -10,9 +12,9 @@ interface ProjectCardV1Props {
 
 export function ProjectCardV1({ project, index }: ProjectCardV1Props) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-border hover:shadow-xl hover:shadow-black/[0.06] dark:hover:shadow-black/25">
+    <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-border hover:shadow-xl hover:shadow-black/6 dark:hover:shadow-black/25">
       {/* Sliding top accent — reveals left-to-right on hover */}
-      <div className="absolute inset-x-0 top-0 z-10 h-[2px] origin-left scale-x-0 bg-primary/80 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+      <div className="absolute inset-x-0 top-0 z-10 h-0.5 origin-left scale-x-0 bg-primary/80 transition-transform duration-500 ease-out group-hover:scale-x-100" />
       <div className="flex flex-col md:flex-row">
         {/* Image */}
         <div className="relative h-56 shrink-0 overflow-hidden md:h-auto md:w-2/5">
@@ -23,7 +25,7 @@ export function ProjectCardV1({ project, index }: ProjectCardV1Props) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {/* gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:bg-gradient-to-r" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent md:bg-linear-to-r" />
           {/* index badge */}
           <span className="absolute top-4 left-4 font-display text-xs text-white/60 italic">
             {String(index + 1).padStart(2, "0")}
@@ -46,7 +48,7 @@ export function ProjectCardV1({ project, index }: ProjectCardV1Props) {
                   aria-label={`View code of ${project.title} on GitHub`}
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all duration-200 hover:border-border hover:bg-muted hover:text-foreground"
                 >
-                  <Github className="h-4 w-4" />
+                  <Icon icon="github" className="h-4 w-4" />
                 </a>
                 <a
                   href={project.demo}

@@ -11,7 +11,7 @@ export function AboutSection() {
   return (
     <Section id="about">
       <div className="mx-auto max-w-3xl">
-        <p className="mb-6 text-[10px] font-bold tracking-[0.28em] text-primary/70 uppercase">
+        <p className="mb-6 text-[11px] font-bold tracking-[0.28em] text-primary/80 uppercase">
           01 ——— About
         </p>
 

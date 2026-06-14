@@ -1,4 +1,7 @@
+"use client";
+
 import { Mail, MapPin } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 import { Icon } from "@/components/icon";
 import { Section } from "@/components/section";
@@ -8,6 +11,27 @@ import { ContactForm } from "../contact-form";
 import { ContactMethod } from "../contact-method";
 
 export function ContactSection() {
+  const [visible, setVisible] = useState(
+    () =>
+      typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (visible) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   const contactMethod: Array<ContactData> = [
     {
       icon: <Icon icon={Mail} size={24} className="text-primary" />,
@@ -39,20 +63,28 @@ export function ContactSection() {
 
   return (
     <Section id="contact" title="Contact" eyebrow="05 ——— Say hello">
-      <div className="grid gap-12 md:grid-cols-2">
-        <div className="space-y-8">
-          {/* Italic display subtitle with decorative quote mark */}
+      <div ref={ref} className="grid gap-12 md:grid-cols-2">
+        {/* Left column — slides in from left */}
+        <div
+          className="space-y-8 transition-[opacity,transform] duration-500 ease-out"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateX(0)" : "translateX(-22px)",
+          }}
+        >
           <div className="relative">
             <span
-              className="pointer-events-none absolute -top-3 -left-1 font-display text-[6rem] leading-none text-primary/10 select-none"
+              className="pointer-events-none absolute -top-6 -left-2 font-display text-[8rem] leading-none text-primary/15 select-none"
               aria-hidden="true"
             >
               &ldquo;
             </span>
-            <p className="relative font-display text-xl leading-snug font-light text-foreground/70 italic md:text-2xl">
-              Got something in mind?
+            <p className="relative font-display text-3xl leading-tight font-light text-foreground/80 italic md:text-5xl">
+              Got something
               <br />
-              Let&apos;s make it real.
+              in mind?
+              <br />
+              <span className="text-primary not-italic">Let&apos;s make it real.</span>
             </p>
           </div>
 
@@ -67,7 +99,18 @@ export function ContactSection() {
             ))}
           </div>
         </div>
-        <ContactForm />
+
+        {/* Right column — slides in from right */}
+        <div
+          className="transition-[opacity,transform] duration-500 ease-out"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateX(0)" : "translateX(22px)",
+            transitionDelay: visible ? "120ms" : "0ms",
+          }}
+        >
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );

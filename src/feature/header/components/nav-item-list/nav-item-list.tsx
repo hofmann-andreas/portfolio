@@ -49,17 +49,26 @@ export function NavItemList({
         const isActive = activeSection === navItem.id;
 
         return (
-          <Button
-            key={navItem.id}
-            variant="text"
-            className={clsx(
-              isMobile && "py-2 text-2xl font-medium",
-              isActive ? "text-primary" : "text-muted-foreground"
+          <div key={navItem.id} className={clsx(!isMobile && "relative pb-px")}>
+            <Button
+              variant="text"
+              className={clsx(
+                isMobile && "py-2 text-2xl font-medium",
+                !isMobile &&
+                  (isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"),
+                isMobile && (isActive ? "text-primary" : "text-muted-foreground")
+              )}
+              onClick={() => handleClick(navItem.id)}
+            >
+              {navItem.label}
+            </Button>
+            {!isMobile && (
+              <span
+                className="absolute bottom-0 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-primary transition-all duration-300 ease-out"
+                style={{ width: isActive ? "1.25rem" : "0" }}
+              />
             )}
-            onClick={() => handleClick(navItem.id)}
-          >
-            {navItem.label}
-          </Button>
+          </div>
         );
       })}
     </>

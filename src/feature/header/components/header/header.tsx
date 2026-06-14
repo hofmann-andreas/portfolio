@@ -57,8 +57,11 @@ export function Header() {
       <header className="sticky top-0 z-50 overflow-hidden border-b border-border bg-app/85 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-6 py-4">
           <div className="flex items-center justify-between">
-            <div>
-              <span className="font-display text-base font-semibold tracking-tight text-foreground">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-6 w-6 items-center justify-center rounded bg-primary font-display text-[10px] font-bold text-primary-foreground">
+                AH
+              </div>
+              <span className="font-display text-sm font-semibold tracking-tight text-foreground">
                 Andreas Hofmann
               </span>
             </div>

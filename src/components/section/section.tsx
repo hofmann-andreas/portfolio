@@ -44,7 +44,7 @@ export function Section(props: SectionProps) {
             >
               <div>
                 {eyebrow && (
-                  <p className="mb-2.5 text-[10px] font-bold tracking-[0.28em] text-primary/70 uppercase">
+                  <p className="mb-2.5 text-[11px] font-bold tracking-[0.28em] text-primary/80 uppercase">
                     {eyebrow}
                   </p>
                 )}

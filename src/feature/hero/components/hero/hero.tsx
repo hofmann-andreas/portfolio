@@ -1,11 +1,27 @@
 "use client";
 
 import { ArrowDown, Briefcase } from "lucide-react";
+import { useRef } from "react";
 
 import { Button } from "@/components/button";
 import { scrollToSection } from "@/utils/scroll-to-section";
 
 export function HeroSection() {
+  const magnetRef = useRef<HTMLDivElement>(null);
+
+  function handleMagnetMove(e: React.MouseEvent<HTMLDivElement>) {
+    const el = magnetRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    el.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
+  }
+
+  function handleMagnetLeave() {
+    if (magnetRef.current) magnetRef.current.style.transform = "translate(0,0)";
+  }
+
   return (
     <section
       id="hero"
@@ -19,7 +35,7 @@ export function HeroSection() {
           style={{ animationDelay: "2s" }}
         />
         <div
-          className="absolute -bottom-48 left-1/3 h-[450px] w-[450px] animate-float rounded-full bg-amber-400/8 blur-[110px]"
+          className="absolute -bottom-48 left-1/3 h-[450px] w-[450px] animate-float rounded-full bg-primary/8 blur-[110px]"
           style={{ animationDelay: "4s" }}
         />
         {/* Dot grid texture */}
@@ -39,10 +55,13 @@ export function HeroSection() {
       <div className="relative mx-auto w-full max-w-7xl">
         {/* Badge */}
         <div
-          className="mb-10 inline-flex animate-hero-fade-up items-center gap-2.5 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium text-primary backdrop-blur-sm"
+          className="mb-10 inline-flex animate-hero-fade-up items-center gap-2.5 rounded-full border border-primary/30 bg-primary/8 px-4 py-2 text-sm font-medium text-primary backdrop-blur-sm"
           style={{ animationDelay: "0ms" }}
         >
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+          </span>
           Frontend Developer · Bern, Switzerland
         </div>
 
@@ -58,8 +77,8 @@ export function HeroSection() {
               className="block"
               style={{
                 color: "transparent",
-                WebkitTextStroke: "1px var(--color-foreground)",
-                opacity: 0.48,
+                WebkitTextStroke: "2px var(--color-foreground)",
+                opacity: 0.65,
               }}
             >
               Hofmann
@@ -69,13 +88,13 @@ export function HeroSection() {
           {/* Right: Tagline, current role, CTAs */}
           <div className="animate-hero-fade-up" style={{ animationDelay: "240ms" }}>
             <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
-              I build scalable, high-quality web experiences with Next.js, TypeScript, and modern
-              frontend architectures.
+              I build production interfaces that handle millions of transactions — fast, precise,
+              and built to scale. Next.js and TypeScript are where I live.
             </p>
 
             <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
               <Briefcase className="h-4 w-4 shrink-0 text-primary" />
-              Currently working at{" "}
+              Currently shipping at{" "}
               <a
                 href="https://www.interdiscount.ch"
                 target="_blank"
@@ -87,11 +106,36 @@ export function HeroSection() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button onClick={() => scrollToSection("contact")}>Get in touch</Button>
+              <div
+                ref={magnetRef}
+                onMouseMove={handleMagnetMove}
+                onMouseLeave={handleMagnetLeave}
+                style={{
+                  transition: "transform 0.35s cubic-bezier(0.23,1,0.32,1)",
+                  display: "inline-block",
+                }}
+              >
+                <Button onClick={() => scrollToSection("contact")}>Get in touch</Button>
+              </div>
               <Button variant="secondary" onClick={() => scrollToSection("experience")}>
                 View work
               </Button>
             </div>
+          </div>
+        </div>
+
+        {/* Availability strip */}
+        <div className="mt-14 animate-hero-fade-up" style={{ animationDelay: "420ms" }}>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Open to new opportunities
+            </span>
+            <span className="h-px flex-1 bg-border/40" />
+            <span className="hidden md:inline">Remote · Hybrid · On-site</span>
           </div>
         </div>
       </div>

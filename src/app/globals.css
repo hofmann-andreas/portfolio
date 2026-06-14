@@ -13,7 +13,7 @@
   --color-card-foreground: #0c0e14;
   --color-popover: #ffffff;
   --color-popover-foreground: #0c0e14;
-  --color-primary: #2563eb;
+  --color-primary: #1d4ed8;
   --color-primary-foreground: #ffffff;
   --color-secondary: #eaecf2;
   --color-secondary-foreground: #0c0e14;
@@ -27,7 +27,7 @@
   --color-input: transparent;
   --color-input-background: #edf0f5;
   --color-switch-background: #c4c8d4;
-  --color-ring: #93a0c4;
+  --color-ring: #3b82f6;
   --color-radius: 0.625rem;
 }
 
@@ -38,8 +38,8 @@
   --color-card-foreground: #e8eaed;
   --color-popover: #212936;
   --color-popover-foreground: #e8eaed;
-  --color-primary: #60a5fa;
-  --color-primary-foreground: #ffffff;
+  --color-primary: #93c5fd;
+  --color-primary-foreground: #0c1a2e;
   --color-secondary: #2d3748;
   --color-secondary-foreground: #e8eaed;
   --color-muted: #2d3748;
@@ -51,7 +51,7 @@
   --color-border: #374151;
   --color-input: #2d3748;
   --color-input-background: #2d3748;
-  --color-ring: #60a5fa;
+  --color-ring: #93c5fd;
 }
 
 /* ── Animations ──────────────────────────────────────────── */
