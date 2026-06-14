@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Andreas Hofmann – Software Developer",
     description:
       "Software Developer based in Switzerland, specializing in Next.js, TypeScript, and modern web applications. Currently working on large-scale e-commerce platforms at Interdiscount.",
-    url: "https://hofmannandreas.com/",
+    url: "https://hofmannandreas.com",
     siteName: "Andreas Hofmann Portfolio",
     locale: "en_CH",
     type: "website",
@@ -50,7 +50,7 @@ const websiteJsonLd: WebSite = {
   "@type": "WebSite",
   "@id": "https://hofmannandreas.com/#website",
   name: "Andreas Hofmann – Portfolio",
-  url: "https://hofmannandreas.com/",
+  url: "https://hofmannandreas.com",
   publisher: {
     "@id": "https://hofmannandreas.com/#person",
   },
@@ -61,7 +61,7 @@ const personJsonLd: Person = {
   "@id": "https://hofmannandreas.com/#person",
   name: "Andreas Hofmann",
   jobTitle: "Software Developer",
-  url: "https://hofmannandreas.com/",
+  url: "https://hofmannandreas.com",
   sameAs: ["https://github.com/hofmann-andreas", "https://www.linkedin.com/in/hofmann-andreas"],
   worksFor: {
     "@type": "Organization",
@@ -72,7 +72,7 @@ const personJsonLd: Person = {
 const homePageJsonLd: WebPage = {
   "@type": "WebPage",
   "@id": "https://hofmannandreas.com/#homepage",
-  url: "https://hofmannandreas.com/",
+  url: "https://hofmannandreas.com",
   name: "Andreas Hofmann – Software Developer",
   isPartOf: {
     "@id": "https://hofmannandreas.com/#website",

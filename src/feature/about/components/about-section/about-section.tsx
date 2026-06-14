@@ -11,9 +11,11 @@ export function AboutSection() {
   return (
     <Section id="about" align="center">
       <div className="mx-auto max-w-3xl text-center">
+        <h2 className="sr-only">About</h2>
         {/* Pull-quote opener */}
         <p className="font-display text-xl leading-snug font-semibold tracking-tight text-foreground md:text-2xl">
-          I build production-grade web experiences — the kind that millions of people use every day.
+          I build production-grade web experiences — the kind that tens of thousands of people use
+          every day.
         </p>
 
         <div className="mt-6 flex flex-col gap-5 text-left text-muted-foreground md:text-center">
