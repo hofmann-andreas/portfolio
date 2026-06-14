@@ -41,12 +41,20 @@ export function ContactSection() {
     <Section id="contact" title="Contact" eyebrow="05 ——— Say hello">
       <div className="grid gap-12 md:grid-cols-2">
         <div className="space-y-8">
-          {/* Italic display subtitle */}
-          <p className="font-display text-xl leading-snug font-light text-foreground/70 italic md:text-2xl">
-            Got something in mind?
-            <br />
-            Let&apos;s make it real.
-          </p>
+          {/* Italic display subtitle with decorative quote mark */}
+          <div className="relative">
+            <span
+              className="pointer-events-none absolute -top-3 -left-1 font-display text-[6rem] leading-none text-primary/10 select-none"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+            <p className="relative font-display text-xl leading-snug font-light text-foreground/70 italic md:text-2xl">
+              Got something in mind?
+              <br />
+              Let&apos;s make it real.
+            </p>
+          </div>
 
           <p className="text-muted-foreground">
             I&apos;m always open to exchanging ideas, discussing interesting projects, or exploring

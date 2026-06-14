@@ -7,7 +7,7 @@ export function ProjectsSection() {
   const hasProjects = projects && projects.length > 0;
 
   return (
-    <Section id="projects" title="Featured Projects" eyebrow="04 ——— Work">
+    <Section id="projects" title="Featured Projects" eyebrow="04 ——— Work" alternate>
       {hasProjects ? (
         <ProjectListV1 />
       ) : (

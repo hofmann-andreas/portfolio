@@ -12,13 +12,23 @@ interface SectionProps {
   align?: "left" | "center" | "right";
   adornment?: ReactNode;
   hasMargin?: boolean;
+  alternate?: boolean;
 }
 
 export function Section(props: SectionProps) {
-  const { children, id, title, eyebrow, align = "left", adornment, hasMargin = true } = props;
+  const {
+    children,
+    id,
+    title,
+    eyebrow,
+    align = "left",
+    adornment,
+    hasMargin = true,
+    alternate,
+  } = props;
 
   return (
-    <section id={id} className="scroll-mt-24">
+    <section id={id} className={clsx("scroll-mt-24", alternate && "bg-card/30")}>
       <FadeIn>
         <div
           className={clsx("mx-auto flex max-w-7xl flex-col px-6", {
