@@ -54,7 +54,7 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-background/80 sticky top-0 z-50 border-b border-border backdrop-blur-md">
+      <header className="sticky top-0 z-50 overflow-hidden border-b border-border bg-app/85 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-6 py-4">
           <div className="flex items-center justify-between">
             <div>

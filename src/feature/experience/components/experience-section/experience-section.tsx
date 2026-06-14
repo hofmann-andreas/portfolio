@@ -5,7 +5,7 @@ import { Experience } from "../experience/experience";
 
 export function ExperienceSection() {
   return (
-    <Section id="experience" title="Experience">
+    <Section id="experience" title="Experience" eyebrow="02 ——— Work">
       <div className="relative pl-1">
         {/* Vertical timeline line — fades out at the bottom */}
         <div

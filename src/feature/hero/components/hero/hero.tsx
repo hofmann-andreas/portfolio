@@ -22,6 +22,18 @@ export function HeroSection() {
           className="absolute -bottom-48 left-1/3 h-[450px] w-[450px] animate-float rounded-full bg-amber-400/8 blur-[110px]"
           style={{ animationDelay: "4s" }}
         />
+        {/* Dot grid texture */}
+        <div
+          className="absolute inset-0 opacity-[0.055] dark:opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at center, var(--color-foreground) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            maskImage: "radial-gradient(ellipse 85% 85% at 50% 45%, black 20%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 85% 85% at 50% 45%, black 20%, transparent 100%)",
+          }}
+        />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl">
@@ -47,7 +59,7 @@ export function HeroSection() {
               style={{
                 color: "transparent",
                 WebkitTextStroke: "1px var(--color-foreground)",
-                opacity: 0.35,
+                opacity: 0.48,
               }}
             >
               Hofmann
@@ -84,6 +96,12 @@ export function HeroSection() {
         </div>
       </div>
 
+      {/* Bottom fade into page */}
+      <div
+        className="pointer-events-none absolute right-0 bottom-0 left-0 h-40 bg-linear-to-b from-transparent to-app"
+        aria-hidden="true"
+      />
+
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-hero-fade-up"
@@ -91,11 +109,10 @@ export function HeroSection() {
       >
         <button
           onClick={() => scrollToSection("about")}
-          className="flex cursor-pointer flex-col items-center gap-2 text-xs tracking-[0.2em] text-muted-foreground uppercase transition-colors hover:text-foreground"
           aria-label="Scroll to about section"
+          className="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-all duration-300 hover:scale-110 hover:border-primary/50 hover:text-primary"
         >
-          <span>Scroll</span>
-          <ArrowDown className="h-4 w-4 animate-bounce" />
+          <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
         </button>
       </div>
     </section>

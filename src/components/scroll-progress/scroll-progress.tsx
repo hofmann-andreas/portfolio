@@ -16,5 +16,10 @@ export function ScrollProgress() {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
-  return <div ref={barRef} className="fixed top-0 left-0 z-[60] h-0.5 w-0 bg-primary" />;
+  return (
+    <div ref={barRef} className="fixed top-0 left-0 z-[60] h-0.5 w-0 bg-primary">
+      {/* Leading-edge bloom */}
+      <div className="absolute top-1/2 right-0 h-3 w-6 -translate-y-1/2 rounded-full bg-primary/60 blur-[3px]" />
+    </div>
+  );
 }

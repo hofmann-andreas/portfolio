@@ -9,26 +9,18 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <Section id="about" align="center">
-      <div className="relative mx-auto max-w-3xl text-center">
-        <h2 className="sr-only">About</h2>
-
-        {/* Decorative oversized quote mark */}
-        <div
-          className="pointer-events-none absolute -top-6 -left-2 font-display leading-none font-bold text-foreground/[0.04] select-none"
-          aria-hidden="true"
-          style={{ fontSize: "clamp(7rem, 18vw, 13rem)", lineHeight: 0.8 }}
-        >
-          &ldquo;
-        </div>
-
-        {/* Pull-quote opener */}
-        <p className="relative font-display text-xl leading-snug font-semibold tracking-tight text-foreground md:text-2xl lg:text-[1.65rem]">
-          I build production-grade web experiences — the kind that tens of thousands of people use
-          every day.
+    <Section id="about">
+      <div className="mx-auto max-w-3xl">
+        <p className="mb-6 text-[10px] font-bold tracking-[0.28em] text-primary/70 uppercase">
+          01 ——— About
         </p>
 
-        <div className="relative mt-6 flex flex-col gap-5 text-muted-foreground md:text-center">
+        <h2 className="font-display text-3xl leading-[1.1] font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+          I build production-grade web experiences — the kind that{" "}
+          <span className="text-primary">tens of thousands</span> of people use every day.
+        </h2>
+
+        <div className="mt-10 grid gap-5 text-muted-foreground sm:grid-cols-2 md:text-[1.0625rem]">
           <p>
             At Interdiscount, I work on a high-traffic e-commerce platform — building new features,
             migrating legacy architectures, and ensuring production stability with Next.js and
@@ -36,13 +28,18 @@ export function AboutSection() {
           </p>
           <p>
             While my main strength is frontend engineering, I also bring solid full-stack knowledge
-            with Node.js, REST APIs, and relational databases — allowing me to collaborate
-            effectively across the stack.
+            with Node.js, REST APIs, and relational databases — letting me collaborate effectively
+            across the stack.
           </p>
         </div>
 
-        {/* Stats row with vertical dividers */}
-        <div className="mt-14 flex divide-x divide-border border-t border-border pt-10">
+        {/* Stats below */}
+        <div className="relative mt-14 flex divide-x divide-border border-t border-border pt-10">
+          {/* Primary accent at the start of the rule */}
+          <div
+            className="pointer-events-none absolute -top-px left-0 h-px w-24 bg-primary"
+            aria-hidden="true"
+          />
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -50,7 +47,7 @@ export function AboutSection() {
             >
               <AnimatedCounter
                 value={stat.value}
-                className="block font-display text-5xl font-bold text-foreground tabular-nums md:text-6xl"
+                className="block font-display text-5xl font-bold text-primary tabular-nums md:text-6xl"
               />
               <span className="mt-2 block text-sm text-muted-foreground">{stat.label}</span>
             </div>

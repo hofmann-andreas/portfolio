@@ -7,27 +7,27 @@
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 
-  --color-app: #ffffff;
-  --color-foreground: #0a0a0a;
+  --color-app: #f5f6f8;
+  --color-foreground: #0c0e14;
   --color-card: #ffffff;
-  --color-card-foreground: #0a0a0a;
+  --color-card-foreground: #0c0e14;
   --color-popover: #ffffff;
-  --color-popover-foreground: #0a0a0a;
+  --color-popover-foreground: #0c0e14;
   --color-primary: #2563eb;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #eceef2;
-  --color-secondary-foreground: #030213;
-  --color-muted: #ececf0;
-  --color-muted-foreground: #717182;
-  --color-accent: #e9ebef;
-  --color-accent-foreground: #030213;
+  --color-secondary: #eaecf2;
+  --color-secondary-foreground: #0c0e14;
+  --color-muted: #eaecf2;
+  --color-muted-foreground: #676a7c;
+  --color-accent: #e4e7ef;
+  --color-accent-foreground: #0c0e14;
   --color-destructive: #d4183d;
   --color-destructive-foreground: #ffffff;
-  --color-border: #0000001a;
+  --color-border: #dde0e8;
   --color-input: transparent;
-  --color-input-background: #f3f3f5;
-  --color-switch-background: #cbced4;
-  --color-ring: #a1a1a1;
+  --color-input-background: #edf0f5;
+  --color-switch-background: #c4c8d4;
+  --color-ring: #93a0c4;
   --color-radius: 0.625rem;
 }
 

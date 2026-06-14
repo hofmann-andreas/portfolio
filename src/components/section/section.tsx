@@ -8,13 +8,14 @@ interface SectionProps {
   children: ReactNode;
   id: string;
   title?: string;
+  eyebrow?: string;
   align?: "left" | "center" | "right";
   adornment?: ReactNode;
   hasMargin?: boolean;
 }
 
 export function Section(props: SectionProps) {
-  const { children, id, title, align = "left", adornment, hasMargin = true } = props;
+  const { children, id, title, eyebrow, align = "left", adornment, hasMargin = true } = props;
 
   return (
     <section id={id} className="scroll-mt-24">
@@ -26,12 +27,19 @@ export function Section(props: SectionProps) {
         >
           {(title || adornment) && (
             <div
-              className={clsx("mb-8", {
+              className={clsx("mb-10", {
                 "flex items-start justify-between": adornment,
                 "flex flex-col items-center text-center": !adornment && align === "center",
               })}
             >
-              {title && <Heading type="h2">{title}</Heading>}
+              <div>
+                {eyebrow && (
+                  <p className="mb-2.5 text-[10px] font-bold tracking-[0.28em] text-primary/70 uppercase">
+                    {eyebrow}
+                  </p>
+                )}
+                {title && <Heading type="h2">{title}</Heading>}
+              </div>
               {adornment && adornment}
             </div>
           )}

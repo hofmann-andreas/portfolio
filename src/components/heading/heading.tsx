@@ -23,7 +23,7 @@ export function Heading(props: HeadingProps) {
 
   const font = clsx({
     "font-display text-3xl font-bold tracking-tight": type === "h1",
-    "font-display text-2xl font-semibold tracking-tight": type === "h2",
+    "font-display text-3xl font-semibold tracking-tight md:text-4xl": type === "h2",
     "text-lg font-semibold": type === "h3",
     "text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground": type === "h4",
   });
