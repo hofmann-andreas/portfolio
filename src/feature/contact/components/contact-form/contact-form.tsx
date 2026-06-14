@@ -29,8 +29,8 @@ export function ContactForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <div className="flex flex-1 flex-col">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-1 flex-col gap-6">
         {isSuccess && (
           <div
             className="flex items-start gap-3 rounded-lg border border-green-500/20 bg-green-500/10 p-4"
@@ -77,14 +77,16 @@ export function ContactForm() {
           {...register("email", emailValidation)}
         />
 
-        <FormTextArea
-          id="message"
-          label="Message"
-          placeholder="Your message..."
-          rows={5}
-          error={errors.message?.message}
-          {...register("message", messageValidation)}
-        />
+        <div className="flex flex-1 flex-col [&_textarea]:flex-1 [&_textarea]:resize-none [&>div]:flex-1 [&>div>div]:flex-1">
+          <FormTextArea
+            id="message"
+            label="Message"
+            placeholder="Your message..."
+            rows={5}
+            error={errors.message?.message}
+            {...register("message", messageValidation)}
+          />
+        </div>
 
         <Button type="submit" isFullWidth isLoading={isSubmitting} disabled={cooldownRemaining > 0}>
           {isSubmitting

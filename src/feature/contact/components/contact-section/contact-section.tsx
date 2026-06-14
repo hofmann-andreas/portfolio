@@ -102,7 +102,7 @@ export function ContactSection() {
 
         {/* Right column — slides in from right */}
         <div
-          className="transition-[opacity,transform] duration-500 ease-out"
+          className="flex flex-col transition-[opacity,transform] duration-500 ease-out"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateX(0)" : "translateX(22px)",
