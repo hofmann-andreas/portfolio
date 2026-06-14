@@ -29,7 +29,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="rounded-lg border border-border bg-card p-6">
+    <div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {isSuccess && (
           <div

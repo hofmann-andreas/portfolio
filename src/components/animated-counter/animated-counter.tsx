@@ -35,8 +35,7 @@ export function AnimatedCounter({ value, duration = 2000, className }: AnimatedC
           const tick = (now: number) => {
             const progress = Math.min((now - start) / duration, 1);
             // cubic ease-in-out — starts slow, speeds through the middle, settles at the end
-            const eased =
-              progress < 0.5 ? 4 * Math.pow(progress, 3) : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+            const eased = 1 - Math.pow(1 - progress, 3);
             setDisplay(Math.round(eased * num));
             if (progress < 1) requestAnimationFrame(tick);
           };

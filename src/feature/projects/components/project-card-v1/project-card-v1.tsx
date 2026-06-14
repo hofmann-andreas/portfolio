@@ -16,7 +16,7 @@ export function ProjectCardV1(props: ProjectCardV1Props) {
   const { project } = props;
 
   return (
-    <div className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+    <div className="group overflow-hidden rounded border border-border bg-card">
       <div className="flex flex-col md:flex-row">
         <div className="relative h-56 shrink-0 overflow-hidden md:h-auto md:w-2/5">
           <Image

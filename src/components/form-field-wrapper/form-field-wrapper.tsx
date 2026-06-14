@@ -19,7 +19,7 @@ export function FormFieldWrapper(props: FormFieldWrapperProps) {
 
         {error && (
           <p
-            className="flex items-center gap-1 text-sm text-destructive"
+            className="flex items-center gap-1 text-sm text-destructive dark:text-red-400"
             role="alert"
             aria-live="polite"
           >

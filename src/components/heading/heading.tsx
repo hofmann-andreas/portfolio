@@ -5,7 +5,6 @@ interface HeadingProps {
   type: "h1" | "h2" | "h3" | "h4";
   children: ReactNode;
   marginBottom?: "xs" | "sm" | "md" | "lg" | "xl";
-  // Only use for special cases like 404 page
   className?: string;
 }
 
@@ -23,11 +22,18 @@ export function Heading(props: HeadingProps) {
   });
 
   const font = clsx({
-    "text-3xl font-bold": type === "h1",
-    "text-2xl font-semibold": type === "h2",
-    "text-xl font-medium": type === "h3",
-    "text-lg font-normal": type === "h4",
+    "font-display text-3xl font-bold tracking-tight": type === "h1",
+    "font-display text-2xl font-semibold tracking-tight": type === "h2",
+    "text-lg font-semibold": type === "h3",
+    "text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground": type === "h4",
   });
 
-  return <Component className={clsx(font, margin, className)}>{children}</Component>;
+  return (
+    <Component
+      className={clsx(font, margin, className)}
+      style={type === "h2" ? { fontVariationSettings: '"SOFT" 50' } : undefined}
+    >
+      {children}
+    </Component>
+  );
 }

@@ -21,28 +21,17 @@ export function Section(props: SectionProps) {
       <FadeIn>
         <div
           className={clsx("mx-auto flex max-w-7xl scroll-mt-24 flex-col px-6", {
-            "py-20": hasMargin,
+            "py-12 md:py-20": hasMargin,
           })}
         >
           {(title || adornment) && (
             <div
               className={clsx("mb-8", {
                 "flex items-start justify-between": adornment,
-                "flex flex-col items-center": !adornment && align === "center",
-                "flex flex-col items-end": !adornment && align === "right",
+                "flex flex-col items-center text-center": !adornment && align === "center",
               })}
             >
-              {title &&
-                (align === "center" ? (
-                  <div className="flex flex-col items-center">
-                    <Heading type="h2">{title}</Heading>
-                    <div className="mt-2 h-1 w-10 rounded-full bg-primary" />
-                  </div>
-                ) : (
-                  <div className="border-l-4 border-primary pl-4">
-                    <Heading type="h2">{title}</Heading>
-                  </div>
-                ))}
+              {title && <Heading type="h2">{title}</Heading>}
               {adornment && adornment}
             </div>
           )}

@@ -1,47 +1,47 @@
 import { Mail } from "lucide-react";
 
-import { Heading } from "@/components/heading";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="text-center md:text-left">
-            <Heading type="h3" marginBottom="xs">
-              Andreas Hofmann
-            </Heading>
-            <p className="mt-1 text-muted-foreground">
-              Software Developer specializing in Next.js and TypeScript
-            </p>
-            <p className="text-muted-foreground">Based in Switzerland</p>
-          </div>
+    <footer className="border-t border-border">
+      <div className="mx-auto max-w-7xl px-6 py-10">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <span className="font-display font-semibold tracking-tight text-foreground">
+            Andreas Hofmann
+          </span>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <Link
               href="https://github.com/hofmann-andreas"
               shouldOpenInNewWindow
               aria-label="View profile on GitHub"
+              className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              <Icon icon="github" size={24} />
+              <Icon icon="github" size={20} />
             </Link>
             <Link
               href="https://linkedin.com/in/hofmann-andreas"
               shouldOpenInNewWindow
               aria-label="View profile on LinkedIn"
+              className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              <Icon icon="linkedin" size={24} />
+              <Icon icon="linkedin" size={20} />
             </Link>
-            <Link href="mailto:contact@hofmannandreas.com" aria-label="Send email">
-              <Icon icon={Mail} size={24} />
+            <Link
+              href="mailto:contact@hofmannandreas.com"
+              aria-label="Send email"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Icon icon={Mail} size={20} />
             </Link>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border pt-8 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} Andreas Hofmann. All rights reserved.</p>
+        <div className="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Andreas Hofmann</p>
+          <p className="mt-1 text-xs italic">Built with Next.js and TypeScript.</p>
         </div>
       </div>
     </footer>

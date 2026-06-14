@@ -1,4 +1,3 @@
-import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
 import { projects } from "../../data/projects";
@@ -12,36 +11,27 @@ export function ProjectsSection() {
       {hasProjects ? (
         <ProjectListV1 />
       ) : (
-        <div className="my-12 flex flex-col items-center justify-center">
-          <div className="flex max-w-2xl flex-col gap-6 text-center">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-primary"
+        <div className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-3">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="flex flex-col gap-4 rounded-lg border border-dashed border-border p-6"
               >
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
-            </div>
-
-            <Heading type="h3">Coming Soon!</Heading>
-            <p className="text-muted-foreground">
-              I&apos;m currently working on some exciting projects that will be showcased here soon.
-              Stay tuned for updates on my latest work in web development and innovative solutions.
-            </p>
-            <p className="text-muted-foreground">
-              In the meantime, feel free to check out my experience and tech stack, or get in touch
-              if you&apos;d like to discuss potential collaborations.
-            </p>
+                <div className="h-32 rounded bg-foreground/[0.03]" />
+                <div className="space-y-2">
+                  <div className="h-3 w-2/3 rounded bg-foreground/[0.06]" />
+                  <div className="h-3 w-full rounded bg-foreground/[0.04]" />
+                  <div className="h-3 w-4/5 rounded bg-foreground/[0.04]" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="h-5 w-12 rounded-full bg-foreground/[0.05]" />
+                  <div className="h-5 w-16 rounded-full bg-foreground/[0.05]" />
+                </div>
+              </div>
+            ))}
           </div>
+          <p className="text-center text-sm text-muted-foreground">Projects coming soon</p>
         </div>
       )}
     </Section>

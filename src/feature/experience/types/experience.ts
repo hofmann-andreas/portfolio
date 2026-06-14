@@ -6,5 +6,6 @@ export interface ExperienceData {
   description: string;
   focusAreas: string[];
   stack: string[];
+  companyUrl?: string;
   isCurrent?: boolean;
 }

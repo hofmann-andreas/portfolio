@@ -1,9 +1,4 @@
-import { ChevronRight } from "lucide-react";
-
 import { Badge } from "@/components/badge/badge";
-import { Card } from "@/components/card";
-import { Heading } from "@/components/heading";
-import { Icon } from "@/components/icon";
 
 import { ExperienceData } from "../../types";
 
@@ -13,58 +8,66 @@ interface ExperienceProps {
 
 export function Experience(props: ExperienceProps) {
   const { experience } = props;
-
   return (
-    <div className="relative border-l-2 border-primary pl-5 md:pl-8">
-      <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full bg-primary" />
-
-      <Card>
-        <div className="flex flex-col gap-5">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <div className="mb-1 flex flex-wrap items-center gap-2">
-                <Heading type="h3">{experience.role}</Heading>
-                {experience.isCurrent && (
-                  <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-medium text-primary">
-                    Current
-                  </span>
-                )}
-              </div>
-              <p className="text-primary">{experience.company}</p>
-            </div>
-            <span className="text-sm text-muted-foreground">{experience.period}</span>
+    <div className="border-t border-border py-10">
+      {/* Header row */}
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-lg font-semibold text-foreground">{experience.role}</h3>
+            {experience.isCurrent && (
+              <span className="rounded border border-primary/40 px-2 py-0.5 text-xs font-medium tracking-widest text-primary uppercase">
+                Current
+              </span>
+            )}
           </div>
-
-          <p className="text-muted-foreground">{experience.description}</p>
-
-          <div>
-            <Heading type="h4" marginBottom="sm">
-              Focus Areas
-            </Heading>
-            <ul className="flex flex-col gap-1.5">
-              {experience.focusAreas.map((area, index) => (
-                <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                  <Icon icon={ChevronRight} size={16} className="mt-1 shrink-0 text-primary" />
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <Heading type="h4" marginBottom="sm">
-              Stack
-            </Heading>
-            <div className="flex flex-wrap gap-2">
-              {experience.stack.map((tech, index) => (
-                <Badge key={index} size="sm">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </div>
+          {experience.companyUrl ? (
+            <a
+              href={experience.companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-0.5 inline-block font-medium text-primary transition-opacity hover:opacity-75"
+            >
+              {experience.company}
+            </a>
+          ) : (
+            <p className="mt-0.5 font-medium text-primary">{experience.company}</p>
+          )}
         </div>
-      </Card>
+        <span className="text-sm text-muted-foreground">{experience.period}</span>
+      </div>
+
+      {/* Description */}
+      <p className="mb-6 max-w-2xl text-muted-foreground">{experience.description}</p>
+
+      {/* Focus */}
+      <div className="mb-6">
+        <p className="mb-3 text-xs font-medium tracking-[0.15em] text-muted-foreground uppercase">
+          Focus
+        </p>
+        <ul className="flex flex-col gap-2">
+          {experience.focusAreas.map((area, index) => (
+            <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+              {area}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Stack */}
+      <div>
+        <p className="mb-3 text-xs font-medium tracking-[0.15em] text-muted-foreground uppercase">
+          Stack
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {experience.stack.map((tech) => (
+            <Badge key={tech} size="sm">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

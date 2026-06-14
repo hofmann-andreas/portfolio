@@ -3,7 +3,21 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { Person, WebPage, WebSite } from "schema-dts";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  axes: ["WONK", "opsz", "SOFT"],
+});
 
 import { JsonLd } from "@/components/json-ld/json-ld";
 
@@ -88,7 +102,7 @@ export default function RootLayout({
         />
         <JsonLd id="schema-graph" data={jsonLdGraph} />
       </head>
-      <body>
+      <body className={`${jakarta.variable} ${fraunces.variable}`}>
         {children}
         <Analytics />
         <SpeedInsights />

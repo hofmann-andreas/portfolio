@@ -10,34 +10,34 @@ interface FadeInProps {
 
 export function FadeIn({ children, className }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(
+  const [visible, setVisible] = useState(
     () =>
       typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
 
   useEffect(() => {
-    if (isVisible) return;
+    if (visible) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setVisible(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
     );
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [visible]);
 
   return (
     <div
       ref={ref}
       className={clsx(
-        "transition-all duration-1000 ease-out",
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
+        "transition-all duration-700 ease-out",
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
         className
       )}
     >

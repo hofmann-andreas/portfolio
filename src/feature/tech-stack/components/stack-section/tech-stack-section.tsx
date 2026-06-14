@@ -1,6 +1,3 @@
-import { Code2, Database, Wrench } from "lucide-react";
-
-import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
 import { TechStackData } from "../../types";
@@ -9,7 +6,6 @@ export function TechStackSection() {
   const techStack: Array<TechStackData> = [
     {
       category: "Frontend",
-      icon: <Code2 size={20} className="text-primary" />,
       technologies: [
         "Next.js",
         "React",
@@ -23,44 +19,33 @@ export function TechStackSection() {
     },
     {
       category: "Backend",
-      icon: <Database size={20} className="text-primary" />,
       technologies: ["Node.js", "Express.js", "Sequelize", "MySQL"],
     },
     {
-      category: "Tooling & Workflows",
-      icon: <Wrench size={20} className="text-primary" />,
+      category: "Tooling",
       technologies: ["Git", "ArgoCD", "Vercel", "Playwright", "Jest"],
     },
   ];
 
   return (
     <Section id="stack" title="Tech Stack">
-      <div className="flex flex-col gap-8">
-        <p className="text-muted-foreground">
-          Technologies I use regularly in production and professional projects.
-        </p>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {techStack.map(({ category, icon, technologies }) => {
-            return (
-              <div key={category}>
-                <div className="mb-6 flex items-center gap-3 border-b border-primary/20 pb-3">
-                  <div className="rounded-lg bg-primary/10 p-2">{icon}</div>
-                  <Heading type="h3">{category}</Heading>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {technologies.map((technology) => (
-                    <div
-                      key={technology}
-                      className="cursor-default rounded-lg border border-border bg-card px-4 py-3 text-center transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/5 hover:shadow-lg hover:shadow-primary/10"
-                    >
-                      <span className="text-muted-foreground">{technology}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      <div className="flex flex-col divide-y divide-border">
+        {techStack.map(({ category, technologies }) => (
+          <div key={category} className="flex flex-col gap-4 py-6 md:flex-row md:gap-16">
+            <div className="w-44 shrink-0">
+              <span className="text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
+                {category}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {technologies.map((technology) => (
+                <span key={technology} className="text-foreground/80">
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   );

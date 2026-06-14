@@ -17,11 +17,17 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      <div className="bg-muted/40 dark:bg-white/[0.02]">
+        <AboutSection />
+      </div>
       <ExperienceSection />
-      <TechStackSection />
+      <div className="bg-muted/40 dark:bg-white/[0.02]">
+        <TechStackSection />
+      </div>
       <ProjectsSection />
-      <ContactSection />
+      <div className="bg-muted/40 dark:bg-white/[0.02]">
+        <ContactSection />
+      </div>
     </>
   );
 }

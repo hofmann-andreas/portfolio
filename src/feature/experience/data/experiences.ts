@@ -3,8 +3,9 @@ import { ExperienceData } from "../types";
 export const experiences: Array<ExperienceData> = [
   {
     id: "interdiscount-dev",
-    role: "Software Developer",
+    role: "Frontend Developer",
     company: "Interdiscount",
+    companyUrl: "https://www.interdiscount.ch",
     period: "Aug 2024 - Present",
     isCurrent: true,
     description:

@@ -1,5 +1,3 @@
-import { Link } from "@/components/link/link";
-
 import { ContactData } from "../../types";
 
 interface ContactMethodProps {
@@ -11,21 +9,21 @@ export function ContactMethod(props: ContactMethodProps) {
   const { icon, label, text, href, ariaLabel } = method;
 
   return (
-    <div className="flex items-start gap-2">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-        {icon}
-      </div>
-      <div>
-        <p className="text-lg">{label}</p>
-        <p className="text-muted-foreground">
+    <div className="border-t border-border pt-5">
+      <p className="text-xs font-medium tracking-[0.15em] text-muted-foreground uppercase">
+        {label}
+      </p>
+      <div className="mt-1 flex items-center gap-3">
+        <div className="shrink-0 text-primary">{icon}</div>
+        <p className="font-medium text-foreground dark:text-white">
           {href ? (
-            <Link
+            <a
               href={href}
-              className="text-muted-foreground transition-colors hover:text-primary"
               aria-label={ariaLabel}
+              className="text-foreground transition-colors hover:text-primary dark:text-white"
             >
               {text}
-            </Link>
+            </a>
           ) : (
             <span>{text}</span>
           )}

@@ -6,7 +6,7 @@ import { Experience } from "../experience/experience";
 export function ExperienceSection() {
   return (
     <Section id="experience" title="Experience">
-      <div className="space-y-12">
+      <div>
         {experiences.map((experience) => (
           <Experience key={experience.id} experience={experience} />
         ))}

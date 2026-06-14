@@ -16,9 +16,10 @@ export function FormTextArea(props: FormTextAreaProps) {
       <textarea
         {...rest}
         className={clsx(
-          "w-full rounded-lg border bg-input px-4 py-2 transition-colors focus:ring-2 focus:outline-none",
+          "w-full rounded border bg-input-background px-4 py-2.5 transition-colors placeholder:text-muted-foreground/50 focus:ring-2 focus:outline-none",
           {
-            "border-destructive focus:ring-destructive": error,
+            "border-destructive focus:ring-destructive dark:border-red-400 dark:focus:ring-red-400":
+              error,
             "border-border focus:ring-primary": !error,
           }
         )}
