@@ -12,7 +12,7 @@ interface ProjectCardV1Props {
 
 export function ProjectCardV1({ project, index }: ProjectCardV1Props) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 hover:border-border hover:shadow-xl hover:shadow-black/6 dark:hover:shadow-black/25">
+    <div className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card shadow-sm shadow-black/5 transition-all duration-300 hover:border-border hover:shadow-xl hover:shadow-black/8 dark:shadow-none dark:hover:shadow-black/25">
       {/* Sliding top accent — reveals left-to-right on hover */}
       <div className="absolute inset-x-0 top-0 z-10 h-0.5 origin-left scale-x-0 bg-primary/80 transition-transform duration-500 ease-out group-hover:scale-x-100" />
       <div className="flex flex-col md:flex-row">

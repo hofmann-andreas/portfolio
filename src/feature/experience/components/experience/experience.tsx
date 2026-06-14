@@ -62,7 +62,7 @@ export function Experience({ experience }: ExperienceProps) {
       />
 
       {/* Card */}
-      <div className="rounded-xl border border-border/60 bg-card/60 px-6 py-5 transition-all duration-300 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/4 dark:hover:shadow-black/20">
+      <div className="rounded-xl border border-border/60 bg-card/60 px-6 py-5 shadow-sm shadow-black/5 transition-all duration-300 hover:border-border hover:bg-card hover:shadow-lg hover:shadow-black/6 dark:shadow-none dark:hover:shadow-black/20">
         {/* Header */}
         <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
           <div>

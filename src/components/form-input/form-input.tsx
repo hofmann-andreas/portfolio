@@ -21,7 +21,7 @@ export function FormInput(props: FormInputProps) {
           {
             "border-destructive focus:ring-destructive dark:border-red-400 dark:focus:ring-red-400":
               error,
-            "border-foreground/[0.18] focus:ring-primary dark:border-border": !error,
+            "border-foreground/[0.28] focus:ring-primary dark:border-border": !error,
           }
         )}
       />

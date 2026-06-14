@@ -29,18 +29,18 @@ export function HeroSection() {
     >
       {/* Ambient gradient orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-48 -left-48 h-[650px] w-[650px] animate-float rounded-full bg-primary/15 blur-[140px]" />
+        <div className="absolute -top-48 -left-48 h-[650px] w-[650px] animate-float rounded-full bg-primary/22 blur-[140px] dark:bg-primary/15" />
         <div
-          className="absolute top-1/3 -right-64 h-[550px] w-[550px] animate-float rounded-full bg-violet-500/10 blur-[120px]"
+          className="absolute top-1/3 -right-64 h-[550px] w-[550px] animate-float rounded-full bg-violet-500/16 blur-[120px] dark:bg-violet-500/10"
           style={{ animationDelay: "2s" }}
         />
         <div
-          className="absolute -bottom-48 left-1/3 h-[450px] w-[450px] animate-float rounded-full bg-primary/8 blur-[110px]"
+          className="absolute -bottom-48 left-1/3 h-[450px] w-[450px] animate-float rounded-full bg-primary/14 blur-[110px] dark:bg-primary/8"
           style={{ animationDelay: "4s" }}
         />
         {/* Dot grid texture */}
         <div
-          className="absolute inset-0 opacity-[0.055] dark:opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.075] dark:opacity-[0.04]"
           style={{
             backgroundImage:
               "radial-gradient(circle at center, var(--color-foreground) 1px, transparent 1px)",
@@ -73,16 +73,7 @@ export function HeroSection() {
             style={{ animationDelay: "80ms" }}
           >
             <span className="block text-foreground">Andreas</span>
-            <span
-              className="block"
-              style={{
-                color: "transparent",
-                WebkitTextStroke: "2px var(--color-foreground)",
-                opacity: 0.65,
-              }}
-            >
-              Hofmann
-            </span>
+            <span className="hero-name-outline block">Hofmann</span>
           </h1>
 
           {/* Right: Tagline, current role, CTAs */}

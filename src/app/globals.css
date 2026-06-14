@@ -136,9 +136,25 @@ html {
     inset: 0;
     z-index: 9998;
     pointer-events: none;
-    opacity: 0.06;
+    opacity: 0.085;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     background-size: 300px 300px;
+  }
+
+  .dark body::after {
+    opacity: 0.045;
+  }
+
+  /* Hero name outline — primary stroke in light mode, foreground in dark */
+  .hero-name-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color-primary);
+    opacity: 0.5;
+  }
+
+  .dark .hero-name-outline {
+    -webkit-text-stroke: 2px var(--color-foreground);
+    opacity: 0.65;
   }
 
   input:-webkit-autofill,
