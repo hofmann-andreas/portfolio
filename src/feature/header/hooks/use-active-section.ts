@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const HEADER_HEIGHT = 80;
+const HEADER_HEIGHT = 95;
 
 export function useActiveSection(sectionIds: Array<string>) {
   const [activeId, setActiveId] = useState<string>("");

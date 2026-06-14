@@ -68,10 +68,10 @@ export const experiences: Array<ExperienceData> = [
     description:
       "In my foundation year at Noser Young, I was introduced to professional software development through real-world client projects. I worked with multiple technologies and built a strong technical base that laid the groundwork for my later specialization in web development.",
     focusAreas: [
-      "Implemented features for a course management application using Angular",
+      "Implemented features for a course management application using AngularJS",
       "Built projects with HTML, CSS, JavaScript, PHP, C#, and React Native",
       "Learned structured development practices and team collaboration in a professional environment",
     ],
-    stack: ["Angular", "React Native", "JavaScript", "PHP", "C#", "MySQL", "HTML", "CSS"],
+    stack: ["AngularJS", "React Native", "JavaScript", "PHP", "C#", "MySQL", "HTML", "CSS"],
   },
 ];

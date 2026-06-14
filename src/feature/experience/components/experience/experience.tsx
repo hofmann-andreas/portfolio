@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import { Badge } from "@/components/badge/badge";
 
 import { ExperienceData } from "../../types";
@@ -9,7 +11,18 @@ interface ExperienceProps {
 export function Experience(props: ExperienceProps) {
   const { experience } = props;
   return (
-    <div className="border-t border-border py-10">
+    <div className="relative pb-12 pl-10 last:pb-4">
+      {/* Timeline dot */}
+      <div
+        className={clsx(
+          "absolute top-[9px] left-0 h-3 w-3 -translate-x-1/2 rounded-full transition-colors",
+          experience.isCurrent
+            ? "bg-primary ring-4 ring-primary/20"
+            : "border-2 border-muted-foreground/40 bg-app"
+        )}
+        aria-hidden="true"
+      />
+
       {/* Header row */}
       <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
         <div>
