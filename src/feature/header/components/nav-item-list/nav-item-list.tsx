@@ -55,7 +55,9 @@ export function NavItemList({
               className={clsx(
                 isMobile && "py-2 text-2xl font-medium",
                 !isMobile &&
-                  (isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"),
+                  (isActive
+                    ? "text-foreground after:hidden hover:text-foreground!"
+                    : "text-muted-foreground hover:text-foreground!"),
                 isMobile && (isActive ? "text-primary" : "text-muted-foreground")
               )}
               onClick={() => handleClick(navItem.id)}
