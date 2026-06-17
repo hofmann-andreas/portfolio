@@ -45,9 +45,6 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-border pt-6">
-          <p className="mb-4 font-display text-sm text-muted-foreground/60 italic">
-            Crafted with care in Bern, Switzerland.
-          </p>
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <p>© {new Date().getFullYear()} Andreas Hofmann. All rights reserved.</p>
             <p className="font-display">Built with Next.js and TypeScript.</p>
