@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Lock, Wind } from "lucide-react";
+import { Briefcase, GraduationCap, Lock, Wind } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Icon } from "@/components/icon";
@@ -11,10 +11,20 @@ import { ProjectListV1 } from "../project-list-v1";
 
 const realProjects = [
   {
+    label: "Personal project",
+    title: "Grade Tracker",
+    description:
+      "Tracks a Swiss HF student's modules and weighted assessments, computing pass/at-risk status against the real promotion rules through a custom measuring-instrument UI.",
+    stack: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Tailwind CSS"],
+    status: "In progress",
+    icon: GraduationCap,
+    github: null as string | null,
+  },
+  {
     label: "School project",
     title: "Air Quality Sensor",
     description:
-      "Measuring air quality with an Oxocard Connect and sending real-time push notifications to users when thresholds are exceeded. Built with NanoPy.",
+      "Measures air quality on an Oxocard Connect and pushes real-time alerts when thresholds are exceeded.",
     stack: ["NanoPy", "Oxocard Connect", "Push Notifications"],
     status: "In progress",
     icon: Wind,
@@ -24,7 +34,7 @@ const realProjects = [
     label: "This site",
     title: "Portfolio",
     description:
-      "You're looking at it. Built with Next.js, TypeScript, and Tailwind CSS. Focused on clean architecture, accessibility, and intentional design.",
+      "You're looking at it — built with a focus on clean architecture, accessibility, and intentional design.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "Live",
     icon: null,
@@ -34,7 +44,7 @@ const realProjects = [
     label: "Professional work",
     title: "Interdiscount Platform",
     description:
-      "Frontend work on a high-traffic e-commerce platform — features, migrations, and production stability. Details are under NDA.",
+      "Frontend work on a high-traffic e-commerce platform — features, migrations, and production stability. Under NDA.",
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
     status: "NDA",
     icon: Briefcase,
