@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, GraduationCap, Lock, Wind } from "lucide-react";
+import { Briefcase, ExternalLink, GraduationCap, Lock, TrendingUp, Wind } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Icon } from "@/components/icon";
@@ -12,13 +12,25 @@ import { ProjectListV1 } from "../project-list-v1";
 const realProjects = [
   {
     label: "Personal project",
+    title: "Investment Calculator",
+    description:
+      "Projects what regular contributions compound into, then looks backwards to value a lump sum you never bought. Pure simulation engine, cross-checked against closed-form maths and running entirely in the browser.",
+    stack: ["React", "TypeScript", "Vite", "Vitest"],
+    status: "Live",
+    icon: TrendingUp,
+    github: null as string | null,
+    demo: "https://invest.hofmannandreas.com" as string | null,
+  },
+  {
+    label: "Personal project",
     title: "Grade Tracker",
     description:
       "Tracks a Swiss HF student's modules and weighted assessments, computing pass/at-risk status against the real promotion rules through a custom measuring-instrument UI.",
     stack: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Tailwind CSS"],
     status: "In progress",
     icon: GraduationCap,
-    github: null as string | null,
+    github: null,
+    demo: null,
   },
   {
     label: "School project",
@@ -28,7 +40,8 @@ const realProjects = [
     stack: ["NanoPy", "Oxocard Connect", "Push Notifications"],
     status: "In progress",
     icon: Wind,
-    github: null as string | null,
+    github: null,
+    demo: null,
   },
   {
     label: "This site",
@@ -39,6 +52,7 @@ const realProjects = [
     status: "Live",
     icon: null,
     github: "https://github.com/hofmann-andreas",
+    demo: null,
   },
   {
     label: "Professional work",
@@ -49,6 +63,7 @@ const realProjects = [
     status: "NDA",
     icon: Briefcase,
     github: null,
+    demo: null,
   },
 ];
 
@@ -100,6 +115,17 @@ function ProjectCard({
               className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-border hover:bg-muted hover:text-foreground"
             >
               <Icon icon="github" size={16} />
+            </a>
+          )}
+          {item.demo && (
+            <a
+              href={item.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open the live ${item.title}`}
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/50 text-muted-foreground transition-all hover:border-border hover:bg-muted hover:text-foreground"
+            >
+              <ExternalLink className="h-4 w-4" />
             </a>
           )}
           <span className="flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground">
